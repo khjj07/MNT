@@ -8,6 +8,8 @@ abstract public class Unit:MonoBehaviour
     public float speed=10f;
     public float jumpforce = 2f;
     public bool jumpable = false;
+    public int type = 0;
+    public GameObject arrow;
 
     public virtual void Move(int direction)
     {
@@ -28,6 +30,19 @@ abstract public class Unit:MonoBehaviour
         {
             transform.DOMoveY(transform.position.y+jumpforce, 0.3f);
             jumpable = false;
+        }
+    }
+
+    public virtual void Attack()
+    {
+        if((UnitType)type == UnitType.MeleeWeapon)
+        {
+            //무기휘두르기
+        }
+        else if((UnitType)type == UnitType.RangedWeapon)
+        {
+            GameObject instance=Instantiate(arrow);
+            //투사체 생성
         }
     }
     public void OnCollisionStay2D(Collision2D collision)
