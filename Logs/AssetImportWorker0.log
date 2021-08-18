@@ -1034,3 +1034,4 @@ Received Import Request.
 Start importing Assets/Scripts/Prop/Thorn.cs using Guid(13fc8cd39ff7452498efe098c0b8bb5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14d371732da77b44e5a9a5b5ca64d63b') in 0.001673 seconds
   Import took 0.004679 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
