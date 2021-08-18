@@ -41,7 +41,7 @@ abstract public class Unit:MonoBehaviour
         }
         else if((UnitType)type == UnitType.RangedWeapon)
         {
-            GameObject instance=Instantiate(arrow);
+            GameObject instance=(GameObject)Instantiate(arrow,transform.position,transform.rotation);
             //투사체 생성
         }
     }

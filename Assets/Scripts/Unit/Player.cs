@@ -27,4 +27,12 @@ public class Player : Unit
             base.Jump();
         }
     }
+    public override void Attack()
+    {
+        if (focus)
+        {
+            Debug.Log("ddd");
+            base.Attack();
+        }
+    }
 }
