@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 public class GameState : MonoBehaviour
 {
-    public GameStateManager manager;
     public GameState previousState;
     public GameState nextState;
     public UnityEvent onStateEnableEvent;
@@ -29,6 +28,6 @@ public class GameState : MonoBehaviour
 
     public void ChangeState(GameState newState)
     {
-        manager.Change(newState);
+        GameStateManager.instance.Change(newState);
     }
 }
