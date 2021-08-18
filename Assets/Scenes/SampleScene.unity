@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae23b956bf025cb43ab0eb55401b963f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 577427583}
   previousState: {fileID: 0}
   nextState: {fileID: 1208278623}
   onStateEnableEvent:
@@ -652,6 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e94ae02331d982498b2b12724f1b4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1208278622}
 --- !u!1 &577427581
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 577427582}
   - component: {fileID: 577427583}
   - component: {fileID: 577427584}
+  - component: {fileID: 577427585}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -696,7 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb201feca016d4428078a2ae1944b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 1208278623}
+  _currentState: {fileID: 1208278623}
 --- !u!114 &577427584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,8 +714,8 @@ MonoBehaviour:
   OnKeyInput:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 577427583}
-        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+      - m_Target: {fileID: 577427585}
+        m_TargetAssemblyTypeName: FlowManager, Assembly-CSharp
         m_MethodName: Next
         m_Mode: 1
         m_Arguments:
@@ -725,6 +726,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &577427585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577427581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71561148dca4c324f912c86193ef3ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_list:
+  - {fileID: 1208278623}
+  - {fileID: 424107836}
 --- !u!1 &701377542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8092589548501126789, guid: 0469201df7d2fd248adc50cb16eedc96, type: 3}
@@ -742,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e94ae02331d982498b2b12724f1b4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1208278622}
 --- !u!1 &1208278614
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +999,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae23b956bf025cb43ab0eb55401b963f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 577427583}
   previousState: {fileID: 0}
   nextState: {fileID: 424107836}
   onStateEnableEvent:

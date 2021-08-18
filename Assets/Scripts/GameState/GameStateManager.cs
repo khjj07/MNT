@@ -2,9 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateManager : MonoBehaviour
+public class GameStateManager : Singleton<GameStateManager>
 {
-    public GameState currentState;
+    public GameState _currentState;
+    public GameState currentState
+    {
+        get
+        {
+            return instance._currentState;
+        }
+        set
+        {
+            instance._currentState = value;
+        }
+    }
 
     public void Start()
     {

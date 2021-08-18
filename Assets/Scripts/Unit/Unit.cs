@@ -10,6 +10,7 @@ abstract public class Unit:MonoBehaviour
     public bool jumpable = false;
     public int type = 0;
     public GameObject arrow;
+    public GameObject blood;
 
     public virtual void Move(int direction)
     {
@@ -44,6 +45,12 @@ abstract public class Unit:MonoBehaviour
             GameObject instance=(GameObject)Instantiate(arrow,transform.position,transform.rotation);
             //투사체 생성
         }
+    }
+    
+    public void Die()
+    {
+        Instantiate(blood,transform.position, transform.rotation);
+        Destroy(gameObject,2f);
     }
     public void OnCollisionStay2D(Collision2D collision)
     {

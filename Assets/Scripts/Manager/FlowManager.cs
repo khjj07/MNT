@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class FlowManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameState[] player_list;
+    private int flag = 0;
+ 
+    public void Next()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        flag++;
+        if(player_list.Length<=flag)
+        {
+            flag = 0;
+        }
+        GameStateManager.instance.Change(player_list[flag]);
     }
 }
