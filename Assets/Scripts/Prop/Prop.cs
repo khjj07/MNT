@@ -7,7 +7,7 @@ abstract public class Prop : MonoBehaviour
 {
     protected Animator animator;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
     }
@@ -23,10 +23,16 @@ abstract public class Prop : MonoBehaviour
         {
             CollisionEnterProp(collision);
         }
+
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            CollisionEnterArrow(collision);
+        }
             
     }
 
     public abstract void CollisionEnterUnit(Collision2D collision);
     public abstract void CollisionEnterProp(Collision2D collision);
+    public abstract void CollisionEnterArrow(Collision2D collision);
 
 }

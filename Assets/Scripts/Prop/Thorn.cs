@@ -15,6 +15,11 @@ public class Thorn : Prop
 
     }
 
+    public override void CollisionEnterArrow(Collision2D collision)
+    {
+        
+    }
+
 
     /// <summary>
     /// 다른 객체에서 이 객체를 부술때 사용할 메소드

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Unit
   - Prop
+  - Arrow
   layers:
   - Default
   - TransparentFX
