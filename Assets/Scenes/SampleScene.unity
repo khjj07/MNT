@@ -354,6 +354,7 @@ MonoBehaviour:
   jumpable: 0
   type: 0
   arrow: {fileID: 0}
+  blood: {fileID: 0}
   focus: 0
 --- !u!114 &424107838
 MonoBehaviour:
@@ -986,6 +987,7 @@ MonoBehaviour:
   jumpable: 0
   type: 1
   arrow: {fileID: 7768108993381939784, guid: f94a5c39cec9319468954dd1fe5ec36e, type: 3}
+  blood: {fileID: 0}
   focus: 0
 --- !u!114 &1208278623
 MonoBehaviour:
@@ -1116,7 +1118,7 @@ GameObject:
   - component: {fileID: 1622520176}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -38,6 +38,7 @@ public class Stalactite : Prop
         {
             Debug.Log("Unit 충돌");
             rigid.gravityScale = 0;
+            rigid.velocity = Vector3.zero;
             animator.SetTrigger("Destroy");
         }
 
