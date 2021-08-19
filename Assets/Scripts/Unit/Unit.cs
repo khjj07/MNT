@@ -68,7 +68,9 @@ abstract public class Unit:MonoBehaviour
     public void Hit()
     {
         animator.SetTrigger("die");
-        Instantiate(blood, transform.position, Quaternion.identity);
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        Instantiate(blood, transform.position+new Vector3(0,1f,0), Quaternion.identity);
     }
     public void Die()
     {
