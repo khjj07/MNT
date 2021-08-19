@@ -38,7 +38,7 @@ public class Arrow : MonoBehaviour
         if (collision.CompareTag("Unit"))
         {
             Debug.Log("hit");
-            collision.GetComponent<Player>().Die();
+            collision.GetComponent<Player>().Hit();
             Destroy(gameObject);
         }
     }
