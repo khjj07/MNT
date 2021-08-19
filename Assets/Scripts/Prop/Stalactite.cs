@@ -37,6 +37,7 @@ public class Stalactite : Prop
         if (collision.CompareTag("Unit"))
         {
             Debug.Log("Unit 충돌");
+            collision.gameObject.GetComponent<Unit>().Die();
             rigid.gravityScale = 0;
             rigid.velocity = Vector3.zero;
             animator.SetTrigger("Destroy");
