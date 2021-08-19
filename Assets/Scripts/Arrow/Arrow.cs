@@ -41,6 +41,12 @@ public class Arrow : MonoBehaviour
             collision.GetComponent<Player>().Hit();
             Destroy(gameObject);
         }
+        else if(collision.CompareTag("Tile"))
+        {
+            Debug.Log("Tile Ãæµ¹");
+            Destroy(gameObject);
+        }
     }
+
 }
 

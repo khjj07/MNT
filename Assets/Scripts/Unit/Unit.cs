@@ -34,11 +34,17 @@ abstract public class Unit:MonoBehaviour
 
         if (dir == Direction.Left)
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
+            if(transform.rotation== Quaternion.Euler(0f, 0f, 0f))
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
+            else
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
         else if(dir == Direction.Right)
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            if (transform.rotation == Quaternion.Euler(0f, 0f, 0f))
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
+            else
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
     }
     public virtual void Jump()
