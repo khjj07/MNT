@@ -6,10 +6,16 @@ using DG.Tweening;
 public class Arrow : MonoBehaviour
 {
     public float speed = 10f;
-    public float duration = 5f;
+    public float duration = 2f;
     public void Destroy()
     {
         Destroy(gameObject);
+    }
+    public IEnumerator CollisionOn()
+    {
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        yield return 0;
     }
     void Start()
     {
@@ -25,7 +31,16 @@ public class Arrow : MonoBehaviour
         transform.DOMove(transform.position+direction * speed * duration, duration).OnComplete(()=>{
             Destroy();
         });
+        StartCoroutine(CollisionOn());
     }
-   
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Unit"))
+        {
+            Debug.Log("hit");
+            collision.GetComponent<Player>().Die();
+            Destroy(gameObject);
+        }
+    }
 }
 

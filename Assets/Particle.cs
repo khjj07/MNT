@@ -8,12 +8,15 @@ public class Particle : MonoBehaviour
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
+        ps.Pause();
+        ps.Play(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(ps)
+        Debug.Log(ps.isPlaying);
+        if (ps)
         {
             if(!ps.IsAlive())
             {

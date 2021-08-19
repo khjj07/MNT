@@ -31,7 +31,6 @@ public class Player : Unit
     {
         if (focus)
         {
-            Debug.Log("ddd");
             base.Attack();
         }
     }

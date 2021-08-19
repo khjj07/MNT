@@ -49,16 +49,20 @@ abstract public class Unit:MonoBehaviour
     
     public void Die()
     {
-        Instantiate(blood,transform.position, transform.rotation);
-        Destroy(gameObject,2f);
+       Instantiate(blood, transform.position, Quaternion.identity);
+       //Destroy(gameObject,1f);
     }
-    public void OnCollisionStay2D(Collision2D collision)
+    public void OnTheGround(Collision2D collision)
     {
         Vector3 normalVector = collision.contacts[0].normal;
-        Debug.Log(normalVector);
         if (normalVector.y>0.5)
         {
             jumpable = true;
         }
     }
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        OnTheGround(collision);
+    }
+   
 }

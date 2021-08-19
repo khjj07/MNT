@@ -353,8 +353,8 @@ MonoBehaviour:
   jumpforce: 2
   jumpable: 0
   type: 0
-  arrow: {fileID: 0}
-  blood: {fileID: 0}
+  arrow: {fileID: 7768108993381939784, guid: f94a5c39cec9319468954dd1fe5ec36e, type: 3}
+  blood: {fileID: 298017593397385578, guid: b2cde184ad0662e46b86f36f5ce9b79b, type: 3}
   focus: 0
 --- !u!114 &424107838
 MonoBehaviour:
@@ -987,7 +987,7 @@ MonoBehaviour:
   jumpable: 0
   type: 1
   arrow: {fileID: 7768108993381939784, guid: f94a5c39cec9319468954dd1fe5ec36e, type: 3}
-  blood: {fileID: 0}
+  blood: {fileID: 298017593397385578, guid: b2cde184ad0662e46b86f36f5ce9b79b, type: 3}
   focus: 0
 --- !u!114 &1208278623
 MonoBehaviour:
