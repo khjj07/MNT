@@ -5,8 +5,11 @@ using UnityEngine;
 public class Arm : MonoBehaviour
 {
     public Player player;
-
-    public virtual void Move()
+    public GameObject Armskin;
+    public GameObject Elbow;
+    public GameObject Bow;
+    public string type;
+    public void Move()
     {
         if(player.focus)
         {
@@ -18,6 +21,25 @@ public class Arm : MonoBehaviour
             float dx = target.x - oPosition.x;
             float rotateDegree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);
+            if (target.x > oPosition.x)
+                player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            else
+                player.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            if (transform.rotation.z > -50 && transform.rotation.z > 0)
+            {
+                Armskin.GetComponent<SpriteRenderer>().sortingLayerName = "6";
+                if (Bow)
+                    Bow.GetComponent<SpriteRenderer>().sortingLayerName = "6";
+            }
+            else
+            {
+                if (Bow)
+                    Bow.GetComponent<SpriteRenderer>().sortingLayerName = "6";
+                if (type == "left")
+                    Armskin.GetComponent<SpriteRenderer>().sortingLayerName = "1";
+                else if (type == "left")
+                    Armskin.GetComponent<SpriteRenderer>().sortingLayerName = "6";
+            }
         }
     }
 }
