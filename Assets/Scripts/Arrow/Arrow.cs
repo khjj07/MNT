@@ -7,16 +7,12 @@ public class Arrow : MonoBehaviour
 {
     public float speed = 10f;
     public float duration = 2f;
+    public GameObject shooter;
     public void Destroy()
     {
         Destroy(gameObject);
     }
-    public IEnumerator CollisionOn()
-    {
-        yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        yield return 0;
-    }
+    
     void Start()
     {
         Vector3 mPosition = Input.mousePosition;
@@ -31,19 +27,22 @@ public class Arrow : MonoBehaviour
         transform.DOMove(transform.position+direction * speed * duration, duration).OnComplete(()=>{
             Destroy();
         });
-        StartCoroutine(CollisionOn());
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Unit"))
+        if (collision.CompareTag("Unit") && collision.gameObject != shooter)
         {
-            Debug.Log("hit");
             collision.GetComponent<Player>().Hit();
             Destroy(gameObject);
         }
-        else if(collision.CompareTag("Tile"))
+
+        if(collision.CompareTag("Tile"))
         {
-            Debug.Log("Tile Ãæµ¹");
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Prop"))
+        {
             Destroy(gameObject);
         }
     }
