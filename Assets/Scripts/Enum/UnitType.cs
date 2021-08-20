@@ -4,5 +4,5 @@ using UnityEngine;
 
 public enum UnitType
 {
-    Player,Goblin, GoblinArcher, IronGoblin
+    Player,Goblin, GoblinArcher, IronGoblin, Friend
 }

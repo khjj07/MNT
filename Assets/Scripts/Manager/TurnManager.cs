@@ -13,6 +13,7 @@ public class TurnManager : Singleton<TurnManager>
     public UnityEvent DefeatEvent;
     public UnityEvent EnemyAllDeadEvent;
     public UnityEvent VictoryEvent;
+    public UnityEvent TurnChangeEvent;
 
     void Start()
     {
@@ -46,8 +47,13 @@ public class TurnManager : Singleton<TurnManager>
             flag = 0;
         }
         if (RemainTurn >= 0)
+        {
             UpdatePlayer();
+            TurnChangeEvent.Invoke();
+        }
         else
             DefeatEvent.Invoke();
+
+
     }
 }
