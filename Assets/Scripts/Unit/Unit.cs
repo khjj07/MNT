@@ -17,9 +17,13 @@ abstract public class Unit:MonoBehaviour
     private Animator animator;
     public Transform weapon;
 
-    void Start()
+    void Awake()
     {
+        
         animator = transform.GetComponent<Animator>();
+        this.UpdateAsObservable()
+             .Where(_ => Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.D))
+             .Subscribe(_ => Stop());
     }
     public void Stop()
     {
