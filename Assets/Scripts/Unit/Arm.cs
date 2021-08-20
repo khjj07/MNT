@@ -20,11 +20,19 @@ public class Arm : MonoBehaviour
             float dy = target.y - oPosition.y;
             float dx = target.x - oPosition.x;
             float rotateDegree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);
+           
             if (target.x > oPosition.x)
+            {
                 player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);
+                //Armskin.GetComponent<SpriteRenderer>().flipX = false;
+            }
             else
+            { 
                 player.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                transform.rotation = Quaternion.Euler(180f, 0f, rotateDegree*-1);
+                //Armskin.GetComponent<SpriteRenderer>().flipX = true;
+            }
             if (transform.rotation.z > -50 && transform.rotation.z > 0)
             {
                 Armskin.GetComponent<SpriteRenderer>().sortingLayerName = "6";
