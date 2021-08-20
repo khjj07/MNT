@@ -16,13 +16,10 @@ abstract public class Unit:MonoBehaviour
     public GameObject blood;
     private Animator animator;
     public Transform weapon;
+
     void Start()
     {
-        animator = GetComponent<Animator>();
-        this.UpdateAsObservable()
-            .Where(_ => Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-            .Subscribe(_ => Stop())
-            .AddTo(gameObject);
+        animator = transform.GetComponent<Animator>();
     }
     public void Stop()
     {
@@ -87,8 +84,8 @@ abstract public class Unit:MonoBehaviour
     public void Die()
     {
         TurnManager.instance.UnitDead(transform.GetComponent<GameState>());
-        TurnManager.instance.UpdatePlayer();
         Destroy(gameObject);
+        TurnManager.instance.UpdatePlayer();
     }
 
     public void OnTheGround(Collision2D collision)

@@ -30,7 +30,7 @@ public class Arrow : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Unit") && collision.gameObject != shooter)
+        if ((collision.CompareTag("Unit") || collision.CompareTag("Player")) && collision.gameObject != shooter)
         {
             collision.GetComponent<Player>().Hit();
             Destroy(gameObject);
