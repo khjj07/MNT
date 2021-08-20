@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class TurnManager : Singleton<TurnManager>
 {
     public List<GameState> player_list = new List<GameState>();
+    public Player current_player;
     public int TurnLimit = 4;
     private int flag = 0;
     public int RemainTurn;
@@ -16,6 +17,7 @@ public class TurnManager : Singleton<TurnManager>
     void Start()
     {
         RemainTurn = TurnLimit;
+        UpdatePlayer();
     }
     public void HostageDead()
     {
@@ -32,6 +34,7 @@ public class TurnManager : Singleton<TurnManager>
     public void UpdatePlayer()
     {
         GameStateManager.instance.Change(player_list[flag]);
+        current_player = player_list[flag].GetComponent<Player>();
     }
 
      public void NextTurn()
@@ -43,7 +46,7 @@ public class TurnManager : Singleton<TurnManager>
             flag = 0;
         }
         if (RemainTurn >= 0)
-            GameStateManager.instance.Change(player_list[flag]);
+            UpdatePlayer();
         else
             DefeatEvent.Invoke();
     }
