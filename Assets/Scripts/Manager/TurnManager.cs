@@ -5,11 +5,10 @@ using UnityEngine.Events;
 
 public class TurnManager : Singleton<TurnManager>
 {
-    public GameState[] player_list;
+    public List<GameState> player_list = new List<GameState>();
     public int TurnLimit = 4;
     private int flag = 0;
     public int RemainTurn;
-    private int player_count;
     public UnityEvent DefeatEvent;
     public UnityEvent EnemyAllDeadEvent;
     public UnityEvent VictoryEvent;
@@ -17,26 +16,29 @@ public class TurnManager : Singleton<TurnManager>
     void Start()
     {
         RemainTurn = TurnLimit;
-        player_count = player_list.Length;
     }
     public void HostageDead()
     {
         DefeatEvent.Invoke();
     }
-    public void UnitDead()
+    public void UnitDead(GameState deadunit)
     {
-        player_count--;
-        if (player_count == 1)
+        player_list.Remove(deadunit);
+        if(player_list.Count==1)
         {
             EnemyAllDeadEvent.Invoke();
         }
     }
-  
-    public void NextTurn()
+    public void UpdatePlayer()
+    {
+        GameStateManager.instance.Change(player_list[flag]);
+    }
+
+     public void NextTurn()
     {
         flag++;
         RemainTurn--;
-        if (player_list.Length<=flag)
+        if (player_list.Count<=flag)
         {
             flag = 0;
         }

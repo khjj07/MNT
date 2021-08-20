@@ -35,6 +35,10 @@ abstract public class Unit:MonoBehaviour
 
         if (dir == Direction.Left)
         {
+            if (type==UnitType.Goblin)
+            {
+                transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            }
             if(transform.rotation== Quaternion.Euler(0f, 0f, 0f))
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
             else
@@ -42,6 +46,10 @@ abstract public class Unit:MonoBehaviour
         }
         else if(dir == Direction.Right)
         {
+            if (type == UnitType.Goblin)
+            {
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            }
             if (transform.rotation == Quaternion.Euler(0f, 0f, 0f))
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
             else
@@ -78,6 +86,8 @@ abstract public class Unit:MonoBehaviour
     }
     public void Die()
     {
+        TurnManager.instance.UnitDead(transform.GetComponent<GameState>());
+        TurnManager.instance.UpdatePlayer();
         Destroy(gameObject);
     }
 
