@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using UniRx.Triggers;
+
 public class Player : Unit
 {
     public bool focus = false;
@@ -39,11 +42,10 @@ public class Player : Unit
     }
     void Start()
     {
-        /* this.UpdateAsObservable()
+        this.UpdateAsObservable()
              .Where(_ => type == UnitType.GoblinArcher && !focus && GoblinArcherRayCheck())
              .Subscribe(_ => StartCoroutine(GoblinArcherAttack()))
              .AddTo(gameObject);
-        */
     }
    
     public bool GoblinArcherRayCheck()
@@ -60,12 +62,8 @@ public class Player : Unit
     public IEnumerator GoblinArcherAttack()
     {
         CoroutineRunning = true;
-        while (!focus)
-        {
-            Debug.Log("attack");
-            yield return new WaitForSeconds(attackdelay);
-        }
-        yield return null;
+        Debug.Log("attack");
+        yield return new WaitForSeconds(attackdelay);
         CoroutineRunning = false;
     }
 }
