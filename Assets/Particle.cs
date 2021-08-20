@@ -15,7 +15,6 @@ public class Particle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ps.isPlaying);
         if (ps)
         {
             if(!ps.IsAlive())
