@@ -9,7 +9,7 @@ using UniRx.Triggers;
 
 public class UIMenuController : MonoBehaviour
 {
-    public UIAnimation uIMenuAni;
+    public UIActiveController uIMenuAni;
 
     public TextMeshProUGUI TextCurrentState;
     public TextMeshProUGUI TextStageInformation;
