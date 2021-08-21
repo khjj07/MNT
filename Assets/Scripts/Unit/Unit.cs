@@ -4,7 +4,7 @@ using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
 using DG.Tweening;
-
+using UnityEngine.Events;
 abstract public class Unit:MonoBehaviour
 {
     public float speed=10f;
@@ -16,7 +16,6 @@ abstract public class Unit:MonoBehaviour
     public GameObject blood;
     private Animator animator;
     public Transform weapon;
-
     void Awake()
     {
         
@@ -67,19 +66,34 @@ abstract public class Unit:MonoBehaviour
         }
     }
 
-    public virtual void Attack()
+    public void Attack(Vector3 direction,float rotateDegree)
+    {
+        GameObject instance = (GameObject)Instantiate(arrow, weapon.position, weapon.rotation);
+        instance.GetComponent<Arrow>().shooter = (GameObject)gameObject;
+        instance.GetComponent<Arrow>().direction = direction;
+        instance.GetComponent<Arrow>().rotateDegree = rotateDegree;
+    }
+
+    public virtual void PlayerAttack()
     {
         animator.SetBool("attack", true);
         if(weapontype == WeaponType.RangedWeapon)
         {
-            GameObject instance=(GameObject)Instantiate(arrow, weapon.position, weapon.rotation);
-            instance.GetComponent<Arrow>().shooter = (GameObject)gameObject;
+            Vector3 mPosition = Input.mousePosition;
+            Vector3 oPosition = transform.position;
+            mPosition.z = oPosition.z - Camera.main.transform.position.z;
+            Vector3 target = Camera.main.ScreenToWorldPoint(mPosition);
+            float dy = target.y - oPosition.y;
+            float dx = target.x - oPosition.x;
+            Attack(Vector3.Normalize(target - oPosition), Mathf.Atan2(dy, dx) * Mathf.Rad2Deg);
+            //instance.GetComponent<Arrow>().target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //투사체 생성
         }
         animator.SetBool("attack", false);
     }
     public void Hit()
     {
+        animator.SetBool("jump", false);
         animator.SetTrigger("die");
         GetComponent<Rigidbody2D>().gravityScale = 0;
         GetComponent<CapsuleCollider2D>().enabled = false;
