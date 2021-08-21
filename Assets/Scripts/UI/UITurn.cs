@@ -31,8 +31,8 @@ public class UITurn : MonoBehaviour
         remainTurn = 0;
         limitTurn = TurnManager.TurnLimit;
 
-        TurnManager.TurnChangeEvent.AddListener(() => TurnChange());
         SetTurnIcon();
+        TurnManager.TurnChangeEvent.AddListener(() => TurnChange());
     }
 
 
@@ -49,7 +49,10 @@ public class UITurn : MonoBehaviour
             }
             else
             {
-                turnIcons[i].SetPlayer(null);
+                Debug.Log("Currnet : " + i);
+                turnIcons[i].gameObject.SetActive(false);
+                turnIcons.RemoveAt(i);
+                i--;
             }
         }
     }
@@ -62,9 +65,28 @@ public class UITurn : MonoBehaviour
         TextRemainTurn.text = text;
     }
 
-    void TurnIcon()
+    void TurnIconSort()
     {
+        float directionTime = 0.4f;
 
+        for (int i = 0; i < turnIcons.Count; i++)
+        {
+            if (turnIcons[i].IsPlayerDie())
+            {
+                turnIcons[i].DieDirection(directionTime);
+                turnIcons.RemoveAt(i);
+                i--;
+            }
+        }
+
+        for (int i = 0; i < turnIcons.Count; i++)
+        {
+            var rect = turnIcons[i].GetComponent<RectTransform>();
+
+            rect.DOAnchorPosX(i * rect.sizeDelta.x, directionTime)
+                .SetEase(Ease.OutExpo)
+                .SetAutoKill(false);
+        }
 
     }
 

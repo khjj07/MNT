@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class Thorn : Prop
 {
-
+    public float delayTime;
     public override void CollisionEnterUnit(Collision2D collision)
     {
-        Debug.Log("Call DIE Method Character");
+        Debug.Log("Hit Thorn");
         animator.SetTrigger("Trigger");
+        collision.gameObject.GetComponent<Player>().Die();
     }
 
     public override void CollisionEnterProp(Collision2D collision)
