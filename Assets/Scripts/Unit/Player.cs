@@ -23,7 +23,7 @@ public class Player : Unit
     }
     public void FocusOn()
     {
-        if(type!=UnitType.Player)
+        if(type!=UnitType.Player && Wifi)
         {
             SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_electricWave);
             Wifi.SetActive(true);
@@ -34,7 +34,10 @@ public class Player : Unit
     public void FocusOff()
     {
         focus = false;
-        Wifi.SetActive(false);
+        if (Wifi)
+        {
+            Wifi.SetActive(false);
+        }
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
     public override void Move(int direction)
@@ -62,7 +65,6 @@ public class Player : Unit
     }
     void Start()
     {
-        Wifi.SetActive(false);
         this.UpdateAsObservable()
              .Where(_ => type == UnitType.GoblinArcher && !focus && GoblinArcherRayCheck())
              .Subscribe(_ => StartCoroutine(GoblinArcherAttack()))
@@ -77,7 +79,7 @@ public class Player : Unit
             direction = Vector3.left;
         hit = Physics2D.Raycast(point.position, direction * rayDistance);
         Debug.DrawRay(point.position, direction * rayDistance, new Color(0, 1, 0));
-        return hit.collider != null && hit.collider.CompareTag("Unit") && hit.collider.GetComponent<Player>().type==UnitType.Player && !CoroutineRunning;
+        return hit.collider != null && hit.collider.CompareTag("Unit") && (hit.collider.GetComponent<Player>().type==UnitType.Player || hit.collider.GetComponent<Player>().type == UnitType.Friend) && !CoroutineRunning;
     }
     public IEnumerator GoblinArcherAttack()
     {
@@ -87,11 +89,11 @@ public class Player : Unit
         Debug.Log("attack");
         if (transform.rotation == Quaternion.Euler(0f, 0f, 0f))
         {
-            Attack(Vector3.right, 180f);
+            Attack(Vector3.right, 180f,false);
         }
         else
         {
-            Attack(Vector3.left, -180f);
+            Attack(Vector3.left, -180f, false);
         }
 
         yield return new WaitForSeconds(attackdelay);

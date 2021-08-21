@@ -13,6 +13,7 @@ public class Arrow : MonoBehaviour
     public GameObject shooter;
     public float rotateDegree;
     public Vector3 direction;
+    public bool playershoot;
     public void Destroy()
     {
         Destroy(gameObject);
@@ -21,7 +22,10 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);
-        Time.timeScale = 0.1f;
+        if(playershoot)
+        {
+            Time.timeScale = 0.1f;
+        }
         this.UpdateAsObservable()
              .Where(_ => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space))
              .Subscribe(_ => { Time.timeScale = 1f; })

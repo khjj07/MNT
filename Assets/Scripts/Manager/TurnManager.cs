@@ -93,9 +93,12 @@ public class TurnManager : Singleton<TurnManager>
             flag = 0;
         }
         RemainTurn--;
-        GameStateManager.instance.Change(player_list[flag].GetComponent<GameState>());
-        current_player = player_list[flag].GetComponent<Player>();
-        TurnChangeEvent.Invoke();
+        if (current_player == null || player_list[flag] != current_player)
+        {
+            GameStateManager.instance.Change(player_list[flag].GetComponent<GameState>());
+            current_player = player_list[flag].GetComponent<Player>();
+            TurnChangeEvent.Invoke();
+        }
     }
 
      public void NextTurn()

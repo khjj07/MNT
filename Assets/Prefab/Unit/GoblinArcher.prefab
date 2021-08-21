@@ -369,6 +369,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   point: {fileID: 4139383586609227424}
+  Wifi: {fileID: 2250983549285446062}
 --- !u!1 &1109821731256589337
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6810069566786773235
 Transform:
   m_ObjectHideFlags: 0

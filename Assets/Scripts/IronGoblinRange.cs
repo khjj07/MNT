@@ -23,7 +23,7 @@ public class IronGoblinRange : MonoBehaviour
             if (near_colleague.Count == 0)
             {
                 NoColleagueEvent.Invoke();
-                Goblin.Attack(Vector3.zero,0.0f);
+                Goblin.Attack(Vector3.zero,0.0f,false);
             }
         }
 

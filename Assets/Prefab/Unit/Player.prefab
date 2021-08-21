@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 4308345228651877342}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -600,6 +600,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   point: {fileID: 0}
+  Wifi: {fileID: 0}
 --- !u!114 &4308345228651877340
 MonoBehaviour:
   m_ObjectHideFlags: 0

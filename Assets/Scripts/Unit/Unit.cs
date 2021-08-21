@@ -76,7 +76,7 @@ abstract public class Unit:MonoBehaviour
     {
         Attackable = false;
     }
-    public void Attack(Vector3 direction,float rotateDegree)
+    public void Attack(Vector3 direction,float rotateDegree,bool playershoot)
     {
         if (Attackable && weapontype == WeaponType.RangedWeapon)
         {
@@ -85,6 +85,7 @@ abstract public class Unit:MonoBehaviour
             instance.GetComponent<Arrow>().shooter = (GameObject)gameObject;
             instance.GetComponent<Arrow>().direction = direction;
             instance.GetComponent<Arrow>().rotateDegree = rotateDegree;
+            instance.GetComponent<Arrow>().playershoot = playershoot;
         }
         else if(Attackable)
         {
@@ -108,7 +109,7 @@ abstract public class Unit:MonoBehaviour
             Vector3 target = Camera.main.ScreenToWorldPoint(mPosition);
             float dy = target.y - oPosition.y;
             float dx = target.x - oPosition.x;
-            Attack(Vector3.Normalize(target - oPosition), Mathf.Atan2(dy, dx) * Mathf.Rad2Deg);
+            Attack(Vector3.Normalize(target - oPosition), Mathf.Atan2(dy, dx) * Mathf.Rad2Deg,true);
             //instance.GetComponent<Arrow>().target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //투사체 생성
         }
