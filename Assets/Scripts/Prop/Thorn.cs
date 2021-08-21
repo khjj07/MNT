@@ -8,7 +8,8 @@ public class Thorn : Prop
     {
         Debug.Log("Hit Thorn");
         animator.SetTrigger("Trigger");
-        collision.gameObject.GetComponent<Player>().Die();
+        SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_trap);
+        collision.gameObject.GetComponent<Player>().Hit();
     }
 
     public override void CollisionEnterProp(Collision2D collision)

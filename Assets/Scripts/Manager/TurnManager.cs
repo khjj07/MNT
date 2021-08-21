@@ -19,6 +19,7 @@ public class TurnManager : Singleton<TurnManager>
     public void GameStart()
     {
         RemainTurn = TurnLimit;
+        SoundManager.Instance.PlayBGM(SoundManager.EBGM._bgm_ingame);
         UpdatePlayer();
     }
     public void Defeat()

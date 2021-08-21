@@ -31,25 +31,35 @@ public class Arrow : MonoBehaviour
             Destroy();
         });
     }
+    void Update()
+    {
+        if (Time.timeScale < 1f)
+        {
+            SoundManager.Instance.PlayLoopSFX(SoundManager.ESFX_Loop._sfx_loop_heartBeat);
+        }
+    }
     void OnDestroy()
     {
         Time.timeScale = 1f;
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Unit") && collision.gameObject != shooter)
         {
+            SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_arrowEnd);
             collision.GetComponent<Player>().Hit();
             Destroy(gameObject);
         }
 
         if(collision.CompareTag("Tile"))
         {
+            SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_arrowEnd);
             Destroy(gameObject);
         }
 
         if (collision.CompareTag("Prop"))
         {
+            SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_arrowEnd);
             Destroy(gameObject);
         }
     }

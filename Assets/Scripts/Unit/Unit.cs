@@ -35,7 +35,10 @@ abstract public class Unit:MonoBehaviour
     {
         Direction dir = (Direction)direction;
         animator.SetBool("move", true);
-
+        if (jumpable)
+        {
+            SoundManager.Instance.PlayLoopSFX(SoundManager.ESFX_Loop._sfx_loop_move);
+        }
         if (dir == Direction.Left)
         {
             if (type==UnitType.Goblin)
@@ -64,6 +67,7 @@ abstract public class Unit:MonoBehaviour
         if(jumpable)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 1.0f, 0) * jumpforce, ForceMode2D.Impulse);
+            SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_jump);
             animator.SetBool("jump", true);
             jumpable = false;
         }
@@ -76,6 +80,7 @@ abstract public class Unit:MonoBehaviour
     {
         if (Attackable && weapontype == WeaponType.RangedWeapon)
         {
+            SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_arrowStart);
             GameObject instance = (GameObject)Instantiate(arrow, weapon.position, weapon.rotation);
             instance.GetComponent<Arrow>().shooter = (GameObject)gameObject;
             instance.GetComponent<Arrow>().direction = direction;
@@ -117,6 +122,7 @@ abstract public class Unit:MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 0;
         GetComponent<CapsuleCollider2D>().enabled = false;
         Instantiate(blood, transform.position+new Vector3(0,1f,0), Quaternion.identity);
+        SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_blood);
         CantAttack();
     }
     public void Die()
@@ -137,9 +143,10 @@ abstract public class Unit:MonoBehaviour
     public void OnTheGround(Collision2D collision)
     {
         Vector3 normalVector = collision.contacts[0].normal;
-        if (normalVector.y>0.5)
+        if (normalVector.y>0.5 && jumpable == false)
         {
             jumpable = true;
+            SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_jumpLanding);
         }
     }
    

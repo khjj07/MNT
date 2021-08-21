@@ -13,9 +13,20 @@ public class Player : Unit
     public float attackdelay = 2f;
     public UnityEvent AttackEvent;
     public Transform point;
+
+    public IEnumerator DelayFocus()
+    {
+        yield return new WaitForSeconds(0.1f);
+        focus = true;
+        yield return null;
+    }
     public void FocusOn()
     {
-        focus = true;
+        if(type!=UnitType.Player)
+        {
+            SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_electricWave);
+        }
+        StartCoroutine(DelayFocus());
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
     public void FocusOff()

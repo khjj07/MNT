@@ -65,6 +65,7 @@ public class Stalactite : Prop
     /// </summary>
     private void Destroy()
     {
+        SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_stalactiteBroken);
         GameObject.Destroy(this.gameObject);
     }
 }
