@@ -6,16 +6,22 @@ using UnityEngine.UI;
 using TMPro;
 using UniRx;
 using UniRx.Triggers;
+using DG.Tweening;
 
 public class UICharacter : MonoBehaviour
 {
     private TurnManager TurnManager;
     private UIManager UIManager;
+    private ChatManager ChatManager;
 
     public Image Portrait;
     public Image ImageTooltipMove;
     public Image ImageTooltipJump;
     public Image ImageTooltipAttack;
+
+    public Image ImageChatBox;
+    public TextMeshProUGUI TextName;
+    public Text TextChat;
 
 
     // Use this for initialization
@@ -25,6 +31,8 @@ public class UICharacter : MonoBehaviour
         TurnManager.TurnChangeEvent.AddListener(() => PortraitChange());
 
         UIManager = UIManager.instance;
+
+        ChatManager = ChatManager.instance;
     }
 
     public void PortraitChange()
@@ -57,7 +65,32 @@ public class UICharacter : MonoBehaviour
     {
         Portrait.sprite = UIManager.Sprites
             .Find(x => x.name.Split('_')[1].Equals(player.type.ToString()));
+    }
 
+
+    public void Chat(string name, string chat)
+    {
+        TextName.text = name;
+        TextChat.text = "";
+        TextChat.DOText(chat, 1f);
+    }
+
+    public void NextStartChat()
+    {
+        var chat = ChatManager.GetStartChat();
+
+        if (chat == null)
+        {
+            ImageChatBox.gameObject.SetActive(false);
+            PortraitChange();
+            CameraManager.instance.ChatPlayer(null);
+        }
+        else
+        {
+            Chat(chat.player.name, chat.chat);
+            PortraitChange(chat.player);
+            CameraManager.instance.ChatPlayer(chat.player);
+        }
     }
 
 }

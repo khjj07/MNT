@@ -9,6 +9,7 @@ public class CameraManager : Singleton<CameraManager>
     Tweener cameraMovingTween;
     Player curPlayer;
     Player purPlayer;
+    Player chatPlayer;
 
     void Start()
     {
@@ -46,7 +47,12 @@ public class CameraManager : Singleton<CameraManager>
     /// <param name="player">Mouse Position의 Turn Icon의 Player</param>
     public void PurposePlayer(Player player)
     {
-        //purPlayer = player;
+        purPlayer = player;
+    }
+
+    public void ChatPlayer(Player player)
+    {
+        chatPlayer = player;
     }
 
     /// <summary>
@@ -58,19 +64,33 @@ public class CameraManager : Singleton<CameraManager>
         if (isCameraMovingStart == false)
             return;
 
-        if (curPlayer == null)
+        if (chatPlayer != null)
+        {
+            Vector3 targetVec = chatPlayer.transform.position;
+
+            // z 축 조정
+            targetVec.z = -2f;
+
+            cameraMovingTween.ChangeEndValue(targetVec, true).Restart();
+
             return;
-
-        Vector3 targetVec;
-
-        if (purPlayer == null)
-            targetVec = curPlayer.transform.position;
+        }
         else
-            targetVec = purPlayer.transform.position;
+        {
+            if (curPlayer == null)
+                return;
 
-        // z 축 조정
-        targetVec.z = -2f;
+            Vector3 targetVec;
 
-        cameraMovingTween.ChangeEndValue(targetVec, true).Restart();
+            if (purPlayer == null)
+                targetVec = curPlayer.transform.position;
+            else
+                targetVec = purPlayer.transform.position;
+
+            // z 축 조정
+            targetVec.z = -2f;
+
+            cameraMovingTween.ChangeEndValue(targetVec, true).Restart();
+        }
     }
 }

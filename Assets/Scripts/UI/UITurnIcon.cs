@@ -84,12 +84,12 @@ public class UITurnIcon : MonoBehaviour
     public void PointerEnter()
     {
         Debug.Log("Enter");
-        CameraManager.PurposePlayer(player);
+        //CameraManager.PurposePlayer(player);
     }
 
     public void PointerExit()
     {
         Debug.Log("Exit");
-        CameraManager.PurposePlayer(null);
+        //CameraManager.PurposePlayer(null);
     }
 }
