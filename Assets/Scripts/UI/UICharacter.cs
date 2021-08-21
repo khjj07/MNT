@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UniRx;
 using UniRx.Triggers;
@@ -14,7 +15,7 @@ public class UICharacter : Singleton<UICharacter>
     private UIManager UIManager;
     private ChatManager ChatManager;
 
-    public UICutScene UICutScene;
+    public UIObjectControllerX UIEndCut;
 
     public Image Portrait;
     public Image ImageTooltipMove;
@@ -117,23 +118,17 @@ public class UICharacter : Singleton<UICharacter>
             //PortraitChange();
             CameraManager.instance.ChatPlayer(null);
 
-            // 4스테이지가 아닐 경우
-            if (UICutScene.isDirection == false)
+            if (UIEndCut)
             {
-                Debug.Log("Victory UI On");
+                UIEndCut.gameObject.SetActive(true);
+                Invoke(nameof(Back), 8f);
+            }
+            else
+            {
                 ImageVictory.GetComponent<UIActiveController>().OnUI();
             }
-            else if (UICutScene.isFirst == true)
-            {
-                Debug.Log("Victory UI On");
-                ImageVictory.GetComponent<UIActiveController>().OnUI();
-            }
-            else if (UICutScene.isFirst == false)
-            {
-                Debug.Log("Start End Cut");
-                UICutScene.StartCut();
-            }
-            
+
+
         }
         else
         {
@@ -144,4 +139,8 @@ public class UICharacter : Singleton<UICharacter>
         }
     }
 
+    void Back()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

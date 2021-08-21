@@ -33,6 +33,7 @@ public class UICutScene : MonoBehaviour
         if (isDirectionEnd)
             return;
 
+
         // ¸¶Áö¸· ÄÆ¾ÀÀ»  º¸°í ³­ ÈÄ
         if (currentCutNum >= ImageCuts.Count)
         {
@@ -55,9 +56,20 @@ public class UICutScene : MonoBehaviour
             return;
         }
 
-        ImageCuts[currentCutNum].gameObject.SetActive(true);
-        ImageCuts[currentCutNum].DOFade(1f, 0.5f).From(0f, true);
+        int num = currentCutNum;
+
+        ImageCuts[num].gameObject.SetActive(true);
+
+        if (num > 0)
+            ImageCuts[num].DOFade(1f, 0.5f).From(0f, true)
+                .onComplete += () => ImageCuts[num - 1].gameObject.SetActive(false);
+        else
+            ImageCuts[num].DOFade(1f, 0.5f).From(0f, true);
+
         currentCutNum++;
+
+
+
     }
 
 }

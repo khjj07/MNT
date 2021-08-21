@@ -37,8 +37,10 @@ public class UIManager : Singleton<UIManager>
 
             Debug.Log(UICutScene);
 
-            if (UICutScene.isDirection)
+            if (UICutScene)
                 UICutScene.StartCut();
+            else
+                UICharacter.instance.NextStartChat();
         }
     }
 
