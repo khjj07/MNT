@@ -34,8 +34,13 @@ public class TurnManager : Singleton<TurnManager>
     }
     public void UpdatePlayer()
     {
+        if (player_list.Count <= flag)
+        {
+            flag = 0;
+        }
         GameStateManager.instance.Change(player_list[flag]);
         current_player = player_list[flag].GetComponent<Player>();
+        TurnChangeEvent.Invoke();
     }
 
      public void NextTurn()
@@ -49,7 +54,6 @@ public class TurnManager : Singleton<TurnManager>
         if (RemainTurn >= 0)
         {
             UpdatePlayer();
-            TurnChangeEvent.Invoke();
         }
         else
             DefeatEvent.Invoke();
