@@ -144,5 +144,14 @@ abstract public class Unit:MonoBehaviour
         {
             animator.SetBool("jump", false);
         }
+        if(collision.gameObject.tag=="Unit" && type==UnitType.Player)
+        {
+            UnitType type = collision.gameObject.GetComponent<Player>().type;
+            if(type==UnitType.Goblin || type == UnitType.GoblinArcher || type == UnitType.IronGoblin)
+            {
+                Hit();
+            }
+
+        }
     }
 }
