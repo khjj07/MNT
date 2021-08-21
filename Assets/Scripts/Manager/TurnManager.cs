@@ -20,7 +20,7 @@ public class TurnManager : Singleton<TurnManager>
         RemainTurn = TurnLimit;
         UpdatePlayer();
     }
-    public void HostageDead()
+    public void Defeat()
     {
         DefeatEvent.Invoke();
     }
@@ -100,7 +100,7 @@ public class TurnManager : Singleton<TurnManager>
             UpdatePlayer();
         }
         else
-            DefeatEvent.Invoke();
+            Defeat();
     }
     public void Victory()
     {
