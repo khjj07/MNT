@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class ChatManager : Singleton<ChatManager>
 {
-    public List<Chat> chats;
+    public List<Chat> startChats;
+    public List<Chat> endChats;
 
     public class Chat
     {
         public Player player;
         public string chat;
     }
+
+
 }

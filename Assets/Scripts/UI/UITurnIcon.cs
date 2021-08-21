@@ -45,9 +45,41 @@ public class UITurnIcon : MonoBehaviour
 
         this.player = player;
         ImagePortrait.sprite = UIManager.Sprites
-            .Find(x => x.name.Split('_')[1].Equals(player.type.ToString()));
+            .Find(x =>
+            {
+                if (x.name.Split('_')[0].Equals("Turn"))
+                {
+                    if (x.name.Split('_')[1].Equals(player.type.ToString()))
+                        return true;
+                }
+                return false;
+            });
 
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>Is Player Die?</returns>
+    public bool IsPlayerDie()
+    {
+        Debug.Log("Check Player : " + player);
+        if (player == null)
+        {
+            gameObject.SetActive(false);
+            return true;
+        }
+
+        return false;
+    }
+
+    public void DieDirection(float directionTime)
+    {
+        this.transform.DOLocalMoveY(100f, directionTime).SetRelative(true);
+        this.ImagePortrait.DOFade(0f, directionTime).onComplete
+            += () => gameObject.SetActive(false);
+    }
+
 
     public void PointerEnter()
     {
