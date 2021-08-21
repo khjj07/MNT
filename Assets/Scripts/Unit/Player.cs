@@ -16,10 +16,12 @@ public class Player : Unit
     public void FocusOn()
     {
         focus = true;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
     public void FocusOff()
     {
         focus = false;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
     public override void Move(int direction)
     {

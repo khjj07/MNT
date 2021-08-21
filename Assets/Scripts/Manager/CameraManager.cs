@@ -14,7 +14,7 @@ public class CameraManager : Singleton<CameraManager>
     void Start()
     {
         cameraMovingTween = this.transform
-            .DOMove(-Vector3.one, 0.6f)
+            .DOMoveX(-1, 0.6f)
             .SetEase(Ease.OutExpo)
             .SetAutoKill(false);
 
