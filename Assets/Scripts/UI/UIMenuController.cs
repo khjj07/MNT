@@ -18,8 +18,6 @@ public class UIMenuController : MonoBehaviour
 
     private void Awake()
     {
-
-        TextCurrentState.text = "일시정지";
         TextStageInformation.text = SceneManager.GetActiveScene().name;
 
 

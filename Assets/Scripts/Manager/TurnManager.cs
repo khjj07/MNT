@@ -113,6 +113,7 @@ public class TurnManager : Singleton<TurnManager>
     }
     public void Victory()
     {
+        Debug.Log("Victory");
         VictoryEvent.Invoke();
     }
 }

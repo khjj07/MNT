@@ -3,29 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class UICutScene : MonoBehaviour
 {
+    public bool isDirection = false;
+    private bool isDirectionEnd = false;
     public bool isFirst = true;
     public List<Image> ImageCuts;
     private int currentCutNum = 0;
 
     private void Awake()
     {
+        
+    }
+
+    public void StartCut()
+    {
+        this.gameObject.SetActive(true);
         ImageCuts = GetComponentsInChildren<Image>(true).ToList();
         ImageCuts.RemoveAt(0);
         ImageCuts.ForEach(x => x.gameObject.SetActive(false));
-
-        if (isFirst)
-            NextScene();
+        NextCut();
     }
 
-    public void NextScene()
+    public void NextCut()
     {
+        if (isDirectionEnd)
+            return;
+
         // ¸¶Áö¸· ÄÆ¾ÀÀ»  º¸°í ³­ ÈÄ
         if (currentCutNum >= ImageCuts.Count)
         {
+            isDirectionEnd = true;
+
             this.GetComponent<CanvasGroup>()
                 .DOFade(0f, 0.5f)
                 .onComplete += 
@@ -37,7 +49,7 @@ public class UICutScene : MonoBehaviour
             }
             else
             {
-
+                SceneManager.LoadScene(0);
             }
 
             return;
