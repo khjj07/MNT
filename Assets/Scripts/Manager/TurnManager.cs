@@ -15,7 +15,7 @@ public class TurnManager : Singleton<TurnManager>
     public UnityEvent VictoryEvent;
     public UnityEvent TurnChangeEvent;
 
-    void Start()
+    public void GameStart()
     {
         RemainTurn = TurnLimit;
         UpdatePlayer();
