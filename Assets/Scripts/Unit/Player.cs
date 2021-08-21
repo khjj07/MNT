@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
-
+using UnityEngine.Events;
 public class Player : Unit
 {
     public bool focus = false;
@@ -11,6 +11,8 @@ public class Player : Unit
     private RaycastHit2D hit;
     private bool CoroutineRunning=false;
     public float attackdelay = 2f;
+    public UnityEvent AttackEvent;
+    public Transform point;
     public void FocusOn()
     {
         focus = true;
@@ -33,11 +35,11 @@ public class Player : Unit
             base.Jump();
         }
     }
-    public override void Attack()
+    public override void PlayerAttack()
     {
         if (focus)
         {
-            base.Attack();
+            base.PlayerAttack();
         }
     }
     void Start()
@@ -55,14 +57,25 @@ public class Player : Unit
             direction = Vector3.right;
         else
             direction = Vector3.left;
-        hit = Physics2D.Raycast(transform.position+new Vector3(2f,1.5f,0), direction * rayDistance);
-        Debug.DrawRay(transform.position + new Vector3(2f, 1.5f, 0), direction * rayDistance, new Color(0, 1, 0));
+        hit = Physics2D.Raycast(point.position, direction * rayDistance);
+        Debug.DrawRay(point.position, direction * rayDistance, new Color(0, 1, 0));
         return hit.collider != null && hit.collider.CompareTag("Player") && !CoroutineRunning;
     }
     public IEnumerator GoblinArcherAttack()
     {
+
         CoroutineRunning = true;
+        AttackEvent.Invoke();
         Debug.Log("attack");
+        if (transform.rotation == Quaternion.Euler(0f, 0f, 0f))
+        {
+            Attack(Vector3.right, 180f);
+        }
+        else
+        {
+            Attack(Vector3.left, -180f);
+        }
+
         yield return new WaitForSeconds(attackdelay);
         CoroutineRunning = false;
     }

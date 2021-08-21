@@ -24,10 +24,47 @@ public class TurnManager : Singleton<TurnManager>
     {
         DefeatEvent.Invoke();
     }
+
+    public void FixPlayerList(int i)
+    {
+       
+        while (player_list[i] == player_list[i + 1] && i + 1 < player_list.Count)
+        {
+            player_list.RemoveAt(i + 1);
+            if (i == player_list.Count - 1)
+            {
+                if (i > 0 && player_list[i] == player_list[0])
+                {
+                    player_list.RemoveAt(i);
+                }
+                return;
+            }
+        }
+        if (i < player_list.Count - 1)
+        {
+            FixPlayerList(i + 1);
+        }
+    }
+    
     public void UnitDead(GameState deadunit)
     {
-        player_list.Remove(deadunit);
-        if(player_list.Count==1)
+        int count = 0;
+        for (int i = 0; i < player_list.Count; i++)
+        {
+            if (player_list[i] == deadunit)
+            {
+                count++;
+            }   
+        }
+        for(int i=0;i<count;i++)
+        {
+            player_list.Remove(deadunit);
+        }
+
+        FixPlayerList(0);
+
+
+        if (player_list.Count==1)
         {
             EnemyAllDeadEvent.Invoke();
         }
@@ -38,6 +75,7 @@ public class TurnManager : Singleton<TurnManager>
         {
             flag = 0;
         }
+        RemainTurn--;
         GameStateManager.instance.Change(player_list[flag]);
         current_player = player_list[flag].GetComponent<Player>();
         TurnChangeEvent.Invoke();
@@ -46,7 +84,6 @@ public class TurnManager : Singleton<TurnManager>
      public void NextTurn()
     {
         flag++;
-        RemainTurn--;
         if (player_list.Count<=flag)
         {
             flag = 0;
@@ -57,7 +94,5 @@ public class TurnManager : Singleton<TurnManager>
         }
         else
             DefeatEvent.Invoke();
-
-
     }
 }
