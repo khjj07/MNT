@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class TurnManager : Singleton<TurnManager>
 {
     public List<GameState> player_list = new List<GameState>();
+    public List<Player> nonplayer_list = new List<Player>();//friend Á¦¿Ü
     public Player current_player;
     public int TurnLimit = 4;
     private int flag = 0;
@@ -67,10 +68,17 @@ public class TurnManager : Singleton<TurnManager>
             }
             FixPlayerList(0);
         }
+        else
+        {
+            if(nonplayer_list.Contains(deadunit.GetComponent<Player>()))
+            {
+                nonplayer_list.Remove(deadunit.GetComponent<Player>());
+            }
+        }
        
 
 
-        if (player_list.Count==1)
+        if (player_list.Count==1 && nonplayer_list.Count==0)
         {
             EnemyAllDeadEvent.Invoke();
             Victory();

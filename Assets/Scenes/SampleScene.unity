@@ -1102,6 +1102,8 @@ MonoBehaviour:
   - {fileID: 8786478}
   - {fileID: 1315231382}
   - {fileID: 8786478}
+  nonplayer_list:
+  - {fileID: 1669286265}
   current_player: {fileID: 0}
   TurnLimit: 4
   RemainTurn: 0
