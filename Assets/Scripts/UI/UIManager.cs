@@ -17,8 +17,8 @@ public class UIManager : Singleton<UIManager>
     private void Start()
     {
         TurnManager = TurnManager.instance;
-        UICharacter = UICharacter.instance;
-        UICutScene = UICutScene.instance;
+        //UICharacter = UICharacter.instance;
+        //UICutScene = UICutScene.instance;
 
         TurnManager.VictoryEvent.AddListener(Victory);
         TurnManager.DefeatEvent.AddListener(Defeat);

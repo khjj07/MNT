@@ -14,6 +14,8 @@ public class UICharacter : Singleton<UICharacter>
     private UIManager UIManager;
     private ChatManager ChatManager;
 
+    public UICutScene UICutScene;
+
     public Image Portrait;
     public Image ImageTooltipMove;
     public Image ImageTooltipJump;
@@ -116,20 +118,20 @@ public class UICharacter : Singleton<UICharacter>
             CameraManager.instance.ChatPlayer(null);
 
             // 4스테이지가 아닐 경우
-            if (UICutScene.instance.isDirection == false)
+            if (UICutScene.isDirection == false)
             {
                 Debug.Log("Victory UI On");
                 ImageVictory.GetComponent<UIActiveController>().OnUI();
             }
-            else if (UICutScene.instance.isFirst == true)
+            else if (UICutScene.isFirst == true)
             {
                 Debug.Log("Victory UI On");
                 ImageVictory.GetComponent<UIActiveController>().OnUI();
             }
-            else if (UICutScene.instance.isFirst == false)
+            else if (UICutScene.isFirst == false)
             {
                 Debug.Log("Start End Cut");
-                UICutScene.instance.StartCut();
+                UICutScene.StartCut();
             }
             
         }

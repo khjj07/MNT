@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
-public class UICutScene : Singleton<UICutScene>
+public class UICutScene : MonoBehaviour
 {
     public bool isDirection = false;
     private bool isDirectionEnd = false;

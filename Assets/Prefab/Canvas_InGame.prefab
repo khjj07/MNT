@@ -2148,6 +2148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d83881a9a1a22f43b7702a7e608c23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UICutScene: {fileID: 8907384415021207703}
   Portrait: {fileID: 1406053189403601788}
   ImageTooltipMove: {fileID: 9093753620524009995}
   ImageTooltipJump: {fileID: 7979561815599588640}
@@ -4047,8 +4048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnManager: {fileID: 0}
-  UICutScene: {fileID: 0}
-  UICharacter: {fileID: 0}
+  UICutScene: {fileID: 8907384415021207703}
+  UICharacter: {fileID: 9184704420983759552}
   UIDefeat: {fileID: 3679688935107832609}
   Sprites:
   - {fileID: 21300000, guid: 58d4929fde89ecd45b909e96a651e942, type: 3}
