@@ -114,9 +114,17 @@ abstract public class Unit:MonoBehaviour
     }
     public void Die()
     {
-        TurnManager.instance.UnitDead(transform.GetComponent<GameState>());
-        Destroy(gameObject);
-        TurnManager.instance.UpdatePlayer();
+        if(type==UnitType.Player || type == UnitType.Friend)
+        {
+            TurnManager.instance.Defeat();
+            Destroy(gameObject);
+        }
+        else
+        {
+            TurnManager.instance.UnitDead(transform.GetComponent<GameState>());
+            Destroy(gameObject);
+            TurnManager.instance.UpdatePlayer();
+        }
     }
 
     public void OnTheGround(Collision2D collision)

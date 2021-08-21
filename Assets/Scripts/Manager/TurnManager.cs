@@ -15,13 +15,14 @@ public class TurnManager : Singleton<TurnManager>
     public UnityEvent VictoryEvent;
     public UnityEvent TurnChangeEvent;
 
-    public void GameStart()
+    void GameStart()
     {
         RemainTurn = TurnLimit;
         UpdatePlayer();
     }
     public void Defeat()
     {
+        Debug.Log("defeat");
         DefeatEvent.Invoke();
     }
 

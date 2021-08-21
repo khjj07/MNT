@@ -17,11 +17,6 @@ public class GameStateManager : Singleton<GameStateManager>
         }
     }
 
-    public void Start()
-    {
-        currentState.OnStateEnter();
-    }
-
     public void Change(GameState newState)
     {
         if (currentState != null)
