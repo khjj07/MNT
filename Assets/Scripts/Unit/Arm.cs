@@ -44,18 +44,18 @@ public class Arm : MonoBehaviour
             }
             if (transform.rotation.z > -50 && transform.rotation.z > 0)
             {
-                Armskin.GetComponent<SpriteRenderer>().sortingLayerName = "6";
+                Armskin.GetComponent<SpriteRenderer>().sortingOrder = 7;
                 if (Bow)
-                    Bow.GetComponent<SpriteRenderer>().sortingLayerName = "6";
+                    Bow.GetComponent<SpriteRenderer>().sortingOrder = 7;
             }
             else
             {
                 if (Bow)
-                    Bow.GetComponent<SpriteRenderer>().sortingLayerName = "6";
+                    Bow.GetComponent<SpriteRenderer>().sortingOrder = 7;
                 if (type == "left")
-                    Armskin.GetComponent<SpriteRenderer>().sortingLayerName = "1";
+                    Armskin.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 else if (type == "left")
-                    Armskin.GetComponent<SpriteRenderer>().sortingLayerName = "6";
+                    Armskin.GetComponent<SpriteRenderer>().sortingOrder = 7;
             }
         }
     }

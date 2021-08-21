@@ -41,7 +41,9 @@ public class Player : Unit
     {
         if (focus)
         {
+            Debug.Log(this);
             base.PlayerAttack();
+            TurnManager.instance.NextTurn();
         }
     }
     void Start()
