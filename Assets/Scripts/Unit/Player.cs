@@ -49,7 +49,6 @@ public class Player : Unit
              .Subscribe(_ => StartCoroutine(GoblinArcherAttack()))
              .AddTo(gameObject);
     }
-   
     public bool GoblinArcherRayCheck()
     {
         Vector3 direction;
@@ -59,7 +58,7 @@ public class Player : Unit
             direction = Vector3.left;
         hit = Physics2D.Raycast(point.position, direction * rayDistance);
         Debug.DrawRay(point.position, direction * rayDistance, new Color(0, 1, 0));
-        return hit.collider != null && hit.collider.CompareTag("Player") && !CoroutineRunning;
+        return hit.collider != null && hit.collider.CompareTag("Unit") && hit.collider.GetComponent<Player>().type==UnitType.Player && !CoroutineRunning;
     }
     public IEnumerator GoblinArcherAttack()
     {

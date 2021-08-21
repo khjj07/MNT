@@ -24,11 +24,6 @@ public class GameStateManager : Singleton<GameStateManager>
 
     public void Change(GameState newState)
     {
-        if (currentState == newState)
-        {
-            return;
-        }
-
         if (currentState != null)
         {
             currentState.OnStateExit();
