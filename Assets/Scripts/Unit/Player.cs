@@ -13,6 +13,7 @@ public class Player : Unit
     public float attackdelay = 2f;
     public UnityEvent AttackEvent;
     public Transform point;
+    public GameObject Wifi;
 
     public IEnumerator DelayFocus()
     {
@@ -25,6 +26,7 @@ public class Player : Unit
         if(type!=UnitType.Player)
         {
             SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_electricWave);
+            Wifi.SetActive(true);
         }
         StartCoroutine(DelayFocus());
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -32,6 +34,7 @@ public class Player : Unit
     public void FocusOff()
     {
         focus = false;
+        Wifi.SetActive(false);
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
     public override void Move(int direction)
@@ -59,6 +62,7 @@ public class Player : Unit
     }
     void Start()
     {
+        Wifi.SetActive(false);
         this.UpdateAsObservable()
              .Where(_ => type == UnitType.GoblinArcher && !focus && GoblinArcherRayCheck())
              .Subscribe(_ => StartCoroutine(GoblinArcherAttack()))
