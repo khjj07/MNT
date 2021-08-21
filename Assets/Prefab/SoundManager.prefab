@@ -438,7 +438,7 @@ MonoBehaviour:
   sfx_arrowStart: {fileID: 8300000, guid: 96f24bb80391aff49880218b38bf323b, type: 3}
   sfx_blood: {fileID: 8300000, guid: e462dacdf3b17a9499497948097e4981, type: 3}
   sfx_button: {fileID: 8300000, guid: 7f96bfad8d9ef1e4fb40effedf6bbdf6, type: 3}
-  sfx_electricWave: {fileID: 8300000, guid: c7f8b064e524c1443b3ca014c5678bbc, type: 3}
+  sfx_electricWave: {fileID: 8300000, guid: 93e973def304c7b4eb508fc46ac28bd2, type: 3}
   sfx_jump: {fileID: 8300000, guid: 99319e7e13af3914cbcc9e32f453a12c, type: 3}
   sfx_jumpLanding: {fileID: 8300000, guid: d21dd9837a1b1304991de38691eef789, type: 3}
   sfx_stalactiteBroken: {fileID: 8300000, guid: 8163f6292119aea4390558fd3979df5b, type: 3}
