@@ -27,15 +27,9 @@ public class UIManager : Singleton<UIManager>
         int stageInfor =
             PlayerPrefs.GetInt(SceneManager.GetActiveScene().buildIndex.ToString());
 
-        Debug.Log(stageInfor);
-
-        stageInfor = 0;
-
         if (stageInfor == 0)
         {
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().buildIndex.ToString(), 1);
-
-            Debug.Log(UICutScene);
 
             if (UICutScene)
                 UICutScene.StartCut();
@@ -47,8 +41,10 @@ public class UIManager : Singleton<UIManager>
     void Victory()
     {
         Debug.Log("Victory Event");
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().buildIndex.ToString(), 2);
         UICharacter.isGetStartChat = false;
         UICharacter.NextEndChat();
+
     }
 
     void Defeat()

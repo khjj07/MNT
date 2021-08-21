@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2438007193062231903, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252275007038752201, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
+      propertyPath: UICutScene
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8253040400003739349, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
       propertyPath: m_Name
       value: Canvas_InGame

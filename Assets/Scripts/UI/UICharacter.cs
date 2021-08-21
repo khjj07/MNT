@@ -118,6 +118,7 @@ public class UICharacter : Singleton<UICharacter>
             //PortraitChange();
             CameraManager.instance.ChatPlayer(null);
 
+            // 마지막 스테이지의 엔드 컷씬이 있는가?
             if (UIEndCut)
             {
                 UIEndCut.gameObject.SetActive(true);
