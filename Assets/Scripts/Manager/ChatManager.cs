@@ -34,4 +34,16 @@ public class ChatManager : Singleton<ChatManager>
             return null;
         }
     }
+
+    public Chat GetEndChat()
+    {
+        if (curEndChatCount < endChats.Count)
+        {
+            return endChats[curEndChatCount++];
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

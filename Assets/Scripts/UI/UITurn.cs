@@ -38,7 +38,6 @@ public class UITurn : MonoBehaviour
 
     void SetTurnIcon()
     {
-        Debug.Log(" Set ");
         turnIcons = GetComponentsInChildren<UITurnIcon>().ToList();
 
         for (int i = 0; i < turnIcons.Count; i++)
@@ -49,7 +48,6 @@ public class UITurn : MonoBehaviour
             }
             else
             {
-                Debug.Log("Currnet : " + i);
                 turnIcons[i].gameObject.SetActive(false);
                 turnIcons.RemoveAt(i);
                 i--;

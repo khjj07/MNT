@@ -19,10 +19,12 @@ public class UICharacter : Singleton<UICharacter>
     public Image ImageTooltipJump;
     public Image ImageTooltipAttack;
 
-    public Image ImageChatBox;
-    public TextMeshProUGUI TextName;
-    public Text TextChat;
+    public Image ImageVictory;
 
+    public Image ImageChatBox;
+    //public TextMeshProUGUI TextName;
+    public Text TextChat;
+    public bool isGetStartChat = true;
 
     // Use this for initialization
     void Start()
@@ -71,9 +73,17 @@ public class UICharacter : Singleton<UICharacter>
 
     public void Chat(string name, string chat)
     {
-        TextName.text = name;
+        //TextName.text = name;
         TextChat.text = "";
         TextChat.DOText(chat, 1f);
+    }
+
+    public void ChatBoxButtonDown()
+    {
+        if (isGetStartChat)
+            NextStartChat();
+        else
+            NextEndChat();
     }
 
     public void NextStartChat()
@@ -89,6 +99,43 @@ public class UICharacter : Singleton<UICharacter>
         }
         else
         {
+            Chat(chat.player.name, chat.chat);
+            PortraitChange(chat.player);
+            CameraManager.instance.ChatPlayer(chat.player);
+        }
+    }
+
+    public void NextEndChat()
+    {
+        var chat = ChatManager.GetEndChat();
+
+        if (chat == null)
+        {
+            ImageChatBox.gameObject.SetActive(false);
+            //PortraitChange();
+            CameraManager.instance.ChatPlayer(null);
+
+            // 4스테이지가 아닐 경우
+            if (UICutScene.instance.isDirection == false)
+            {
+                Debug.Log("Victory UI On");
+                ImageVictory.GetComponent<UIActiveController>().OnUI();
+            }
+            else if (UICutScene.instance.isFirst == true)
+            {
+                Debug.Log("Victory UI On");
+                ImageVictory.GetComponent<UIActiveController>().OnUI();
+            }
+            else if (UICutScene.instance.isFirst == false)
+            {
+                Debug.Log("Start End Cut");
+                UICutScene.instance.StartCut();
+            }
+            
+        }
+        else
+        {
+            ImageChatBox.gameObject.SetActive(true);
             Chat(chat.player.name, chat.chat);
             PortraitChange(chat.player);
             CameraManager.instance.ChatPlayer(chat.player);
