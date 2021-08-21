@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 using DG.Tweening;
 
 
 public class UITurnIcon : MonoBehaviour
 {
+    private CameraManager CameraManager;
     private UIManager UIManager;
     private UITurn UITurn;
     [SerializeField]
@@ -24,6 +26,7 @@ public class UITurnIcon : MonoBehaviour
     {
         UITurn = GetComponentInParent<UITurn>();
         UIManager = UIManager.instance;
+        CameraManager = CameraManager.instance;
     }
 
     // Update is called once per frame
@@ -48,11 +51,13 @@ public class UITurnIcon : MonoBehaviour
 
     public void PointerEnter()
     {
-
+        Debug.Log("Enter");
+        CameraManager.PurposePlayer(player);
     }
 
     public void PointerExit()
     {
-
+        Debug.Log("Exit");
+        CameraManager.PurposePlayer(null);
     }
 }

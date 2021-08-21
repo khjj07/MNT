@@ -2283,12 +2283,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be044549a95f9e48ab01084dc073e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GetSprites:
-  - {fileID: 21300000, guid: 59c93106c1565f54d9934f63ad6dc20d, type: 3}
+  Sprites:
   - {fileID: 21300000, guid: f6264e7ceebb3c446a2b402ba327d158, type: 3}
   - {fileID: 21300000, guid: df913eb5ba51a524f838e848da8ae82d, type: 3}
   - {fileID: 21300000, guid: b986d78f8ae049f48846bbb141262a93, type: 3}
   - {fileID: 21300000, guid: e69c3f6e1aadf0342a4fdac08b374191, type: 3}
+  - {fileID: 21300000, guid: 59c93106c1565f54d9934f63ad6dc20d, type: 3}
 --- !u!1 &8253040400069826640
 GameObject:
   m_ObjectHideFlags: 0
