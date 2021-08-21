@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Arm : MonoBehaviour
 {
@@ -9,6 +10,14 @@ public class Arm : MonoBehaviour
     public GameObject Elbow;
     public GameObject Bow;
     public string type;
+    public void Motion()
+    {
+        if (player.type==UnitType.GoblinArcher)
+        {
+            transform.localRotation = Quaternion.Euler(0f, 0f, 270f);
+            //Armskin.GetComponent<SpriteRenderer>().flipX = true;  
+        }
+    }
     public void Move()
     {
         if(player.focus)
