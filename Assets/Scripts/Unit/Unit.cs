@@ -12,10 +12,13 @@ abstract public class Unit:MonoBehaviour
     public bool jumpable = false;
     public WeaponType weapontype = 0;
     public UnitType type;
+    public bool Attackable = true;
     public GameObject arrow;
     public GameObject blood;
     private Animator animator;
     public Transform weapon;
+    public UnityEvent HitEvent;
+    
     void Awake()
     {
         
@@ -65,17 +68,20 @@ abstract public class Unit:MonoBehaviour
             jumpable = false;
         }
     }
-
+    public void CantAttack()
+    {
+        Attackable = false;
+    }
     public void Attack(Vector3 direction,float rotateDegree)
     {
-        if (weapontype==WeaponType.RangedWeapon)
+        if (Attackable && weapontype == WeaponType.RangedWeapon)
         {
             GameObject instance = (GameObject)Instantiate(arrow, weapon.position, weapon.rotation);
             instance.GetComponent<Arrow>().shooter = (GameObject)gameObject;
             instance.GetComponent<Arrow>().direction = direction;
             instance.GetComponent<Arrow>().rotateDegree = rotateDegree;
         }
-        else
+        else if(Attackable)
         {
             animator.SetBool("attack", true);
             Debug.Log("Attack");
@@ -111,6 +117,7 @@ abstract public class Unit:MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 0;
         GetComponent<CapsuleCollider2D>().enabled = false;
         Instantiate(blood, transform.position+new Vector3(0,1f,0), Quaternion.identity);
+        CantAttack();
     }
     public void Die()
     {

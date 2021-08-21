@@ -10,7 +10,10 @@ public class IronGoblinRange : MonoBehaviour
     public Player Goblin;
     public UnityEvent NoColleagueEvent;
 
-
+    public void TriggerOff()
+    {
+        Destroy(gameObject);
+    }
     void OnTriggerExit2D(Collider2D other)
     {
         if (near_colleague.Contains(other))
