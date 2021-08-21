@@ -27,22 +27,24 @@ public class TurnManager : Singleton<TurnManager>
 
     public void FixPlayerList(int i)
     {
-       
-        while (player_list[i] == player_list[i + 1] && i + 1 < player_list.Count)
-        {
-            player_list.RemoveAt(i + 1);
-            if (i == player_list.Count - 1)
-            {
-                if (i > 0 && player_list[i] == player_list[0])
-                {
-                    player_list.RemoveAt(i);
-                }
-                return;
-            }
-        }
         if (i < player_list.Count - 1)
         {
-            FixPlayerList(i + 1);
+            while (player_list[i] == player_list[i + 1] && i + 1 < player_list.Count)
+            {
+                player_list.RemoveAt(i + 1);
+                if (i == player_list.Count - 1)
+                {
+                    if (i > 0 && player_list[i] == player_list[0])
+                    {
+                        player_list.RemoveAt(i);
+                    }
+                    return;
+                }
+            }
+            if (i < player_list.Count - 1)
+            {
+                FixPlayerList(i + 1);
+            }
         }
     }
     
@@ -56,17 +58,22 @@ public class TurnManager : Singleton<TurnManager>
                 count++;
             }   
         }
-        for(int i=0;i<count;i++)
+        if(count>0)
         {
-            player_list.Remove(deadunit);
+            for (int i = 0; i < count; i++)
+            {
+                player_list.Remove(deadunit);
+            }
+            FixPlayerList(0);
         }
-
-        FixPlayerList(0);
+       
 
 
         if (player_list.Count==1)
         {
             EnemyAllDeadEvent.Invoke();
+            Victory();
+            //바뀔수도있음
         }
     }
     public void UpdatePlayer()
@@ -94,5 +101,9 @@ public class TurnManager : Singleton<TurnManager>
         }
         else
             DefeatEvent.Invoke();
+    }
+    public void Victory()
+    {
+        VictoryEvent.Invoke();
     }
 }

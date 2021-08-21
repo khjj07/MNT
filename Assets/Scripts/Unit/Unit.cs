@@ -68,10 +68,22 @@ abstract public class Unit:MonoBehaviour
 
     public void Attack(Vector3 direction,float rotateDegree)
     {
-        GameObject instance = (GameObject)Instantiate(arrow, weapon.position, weapon.rotation);
-        instance.GetComponent<Arrow>().shooter = (GameObject)gameObject;
-        instance.GetComponent<Arrow>().direction = direction;
-        instance.GetComponent<Arrow>().rotateDegree = rotateDegree;
+        if (weapontype==WeaponType.RangedWeapon)
+        {
+            GameObject instance = (GameObject)Instantiate(arrow, weapon.position, weapon.rotation);
+            instance.GetComponent<Arrow>().shooter = (GameObject)gameObject;
+            instance.GetComponent<Arrow>().direction = direction;
+            instance.GetComponent<Arrow>().rotateDegree = rotateDegree;
+        }
+        else
+        {
+            animator.SetBool("attack", true);
+            Debug.Log("Attack");
+        }
+    }
+    public void StopAttack()
+    {
+        animator.SetBool("attack", false);
     }
 
     public virtual void PlayerAttack()
@@ -89,6 +101,7 @@ abstract public class Unit:MonoBehaviour
             //instance.GetComponent<Arrow>().target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //투사체 생성
         }
+        
         animator.SetBool("attack", false);
     }
     public void Hit()
