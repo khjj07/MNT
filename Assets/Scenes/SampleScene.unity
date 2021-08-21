@@ -624,6 +624,10 @@ PrefabInstance:
       propertyPath: sfx_electricWave
       value: 
       objectReference: {fileID: 8300000, guid: 93e973def304c7b4eb508fc46ac28bd2, type: 3}
+    - target: {fileID: 491699770240603324, guid: 3e7dfd1213db72741b3496c584c01f2f, type: 3}
+      propertyPath: sfx_Loop_heartBeat
+      value: 
+      objectReference: {fileID: 8300000, guid: c3df08ffdd6d9894e99434d61eb5403c, type: 3}
     - target: {fileID: 1249860315461320111, guid: 3e7dfd1213db72741b3496c584c01f2f, type: 3}
       propertyPath: m_RootOrder
       value: 16
