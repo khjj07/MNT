@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class TurnManager : Singleton<TurnManager>
 {
-    public List<GameState> player_list = new List<GameState>();
+    public List<Player> player_list = new List<Player>();
     public List<Player> nonplayer_list = new List<Player>();//friend Á¦¿Ü
     public Player current_player;
     public int TurnLimit = 4;
@@ -50,7 +50,7 @@ public class TurnManager : Singleton<TurnManager>
         }
     }
     
-    public void UnitDead(GameState deadunit)
+    public void UnitDead(Player deadunit)
     {
         int count = 0;
         for (int i = 0; i < player_list.Count; i++)
@@ -70,9 +70,9 @@ public class TurnManager : Singleton<TurnManager>
         }
         else
         {
-            if(nonplayer_list.Contains(deadunit.GetComponent<Player>()))
+            if(nonplayer_list.Contains(deadunit))
             {
-                nonplayer_list.Remove(deadunit.GetComponent<Player>());
+                nonplayer_list.Remove(deadunit);
             }
         }
        
@@ -92,7 +92,7 @@ public class TurnManager : Singleton<TurnManager>
             flag = 0;
         }
         RemainTurn--;
-        GameStateManager.instance.Change(player_list[flag]);
+        GameStateManager.instance.Change(player_list[flag].GetComponent<GameState>());
         current_player = player_list[flag].GetComponent<Player>();
         TurnChangeEvent.Invoke();
     }

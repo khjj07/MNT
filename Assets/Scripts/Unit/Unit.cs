@@ -121,7 +121,7 @@ abstract public class Unit:MonoBehaviour
         }
         else
         {
-            TurnManager.instance.UnitDead(transform.GetComponent<GameState>());
+            TurnManager.instance.UnitDead(transform.GetComponent<Player>());
             Destroy(gameObject);
             TurnManager.instance.UpdatePlayer();
         }
