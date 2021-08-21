@@ -8,7 +8,7 @@ using UniRx;
 using UniRx.Triggers;
 using DG.Tweening;
 
-public class UICharacter : MonoBehaviour
+public class UICharacter : Singleton<UICharacter>
 {
     private TurnManager TurnManager;
     private UIManager UIManager;
@@ -38,6 +38,7 @@ public class UICharacter : MonoBehaviour
     public void PortraitChange()
     {
         Player player = TurnManager.current_player;
+        Debug.Log(player);
         Portrait.sprite = UIManager.Sprites
             .Find(x => x.name.Split('_')[1].Equals(player.type.ToString()));
 
@@ -82,8 +83,9 @@ public class UICharacter : MonoBehaviour
         if (chat == null)
         {
             ImageChatBox.gameObject.SetActive(false);
-            PortraitChange();
+            //PortraitChange();
             CameraManager.instance.ChatPlayer(null);
+            TurnManager.GameStart();
         }
         else
         {

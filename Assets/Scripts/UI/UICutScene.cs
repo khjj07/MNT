@@ -30,6 +30,16 @@ public class UICutScene : MonoBehaviour
                 .DOFade(0f, 0.5f)
                 .onComplete += 
                 () => this.gameObject.SetActive(false);
+
+            if (isFirst)
+            {
+                UICharacter.instance.NextStartChat();
+            }
+            else
+            {
+
+            }
+
             return;
         }
 

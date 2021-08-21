@@ -304,7 +304,7 @@ RectTransform:
   - {fileID: 3234467615899677572}
   - {fileID: 4463458919585675659}
   m_Father: {fileID: 8253040400003739350}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2099,6 +2099,7 @@ GameObject:
   - component: {fileID: 3142066897803197532}
   - component: {fileID: 1406053189403601788}
   - component: {fileID: 9184704420983759552}
+  - component: {fileID: 194685782354063648}
   m_Layer: 0
   m_Name: Image_Character
   m_TagString: Untagged
@@ -2184,6 +2185,20 @@ MonoBehaviour:
   ImageChatBox: {fileID: 6245824043970133859}
   TextName: {fileID: 6099141733717862922}
   TextChat: {fileID: 6399810331137642782}
+--- !u!114 &194685782354063648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4763168727181098866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245e922fbcc8fad40ba6a6f7a3676c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startChats: []
+  endChats: []
 --- !u!1 &4765661469843268448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,7 +2810,7 @@ RectTransform:
   - {fileID: 1920055166730291857}
   - {fileID: 6985438780988491863}
   m_Father: {fileID: 8253040400003739350}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4076,8 +4091,8 @@ RectTransform:
   - {fileID: 277903406966582463}
   - {fileID: 5052393367392377208}
   - {fileID: 8253040398968478453}
-  - {fileID: 5500099007697628712}
   - {fileID: 5929664463637997469}
+  - {fileID: 5500099007697628712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
