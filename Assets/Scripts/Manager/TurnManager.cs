@@ -92,9 +92,9 @@ public class TurnManager : Singleton<TurnManager>
         {
             flag = 0;
         }
-        RemainTurn--;
         if (current_player == null || player_list[flag] != current_player)
         {
+            RemainTurn--;
             GameStateManager.instance.Change(player_list[flag].GetComponent<GameState>());
             current_player = player_list[flag].GetComponent<Player>();
             TurnChangeEvent.Invoke();

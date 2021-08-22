@@ -23,7 +23,7 @@ public class Stalactite : Prop
 
     public override void CollisionEnterArrow(Collision2D collision)
     {
-        rigid.gravityScale = 1;
+        rigid.gravityScale = 5;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
