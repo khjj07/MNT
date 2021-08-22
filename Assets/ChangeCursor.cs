@@ -7,6 +7,6 @@ public class ChangeCursor : MonoBehaviour
     [SerializeField] Texture2D cursorimg;
     void Start()
     {
-        Cursor.SetCursor(cursorimg, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(cursorimg, new Vector2(75,75), CursorMode.ForceSoftware);
     }
 }
