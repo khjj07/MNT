@@ -145,8 +145,9 @@ abstract public class Unit:MonoBehaviour
     public void OnTheGround(Collision2D collision)
     {
         Vector3 normalVector = collision.contacts[0].normal;
-        if (normalVector.y>0.5 && jumpable == false)
+        if (normalVector.y>0.7 && jumpable == false)
         {
+            animator.SetBool("jump", false);
             jumpable = true;
             SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_jumpLanding);
         }
@@ -155,12 +156,8 @@ abstract public class Unit:MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Vector3 normalVector = collision.contacts[0].normal;
-        OnTheGround(collision);
-        if (normalVector.y > 0.5)
-        {
-            animator.SetBool("jump", false);
-        }
-        if(collision.gameObject.tag=="Unit" && type==UnitType.Player)
+        
+        if (collision.gameObject.tag=="Unit" && type==UnitType.Player)
         {
             UnitType type = collision.gameObject.GetComponent<Player>().type;
             if(type==UnitType.Goblin || type == UnitType.GoblinArcher || type == UnitType.IronGoblin)
@@ -169,5 +166,9 @@ abstract public class Unit:MonoBehaviour
             }
 
         }
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        OnTheGround(collision); 
     }
 }

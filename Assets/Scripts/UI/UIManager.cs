@@ -23,7 +23,6 @@ public class UIManager : Singleton<UIManager>
         TurnManager.VictoryEvent.AddListener(Victory);
         TurnManager.DefeatEvent.AddListener(Defeat);
 
-
         int stageInfor =
             PlayerPrefs.GetInt(SceneManager.GetActiveScene().buildIndex.ToString());
 
