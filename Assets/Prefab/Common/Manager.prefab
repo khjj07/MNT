@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1847980379552200496}
   - component: {fileID: 1847980379552200655}
   - component: {fileID: 1847980379552200654}
+  - component: {fileID: 740592351}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -91,8 +92,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  nonplayer_list:
-  - {fileID: 0}
+  nonplayer_list: []
   current_player: {fileID: 0}
   TurnLimit: 4
   RemainTurn: 0
@@ -109,3 +109,16 @@ MonoBehaviour:
   TurnChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &740592351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847980379552200498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ae380d6bfdcf94e8279b5de2974b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorimg: {fileID: 2800000, guid: 386d3156609c1ac4a8f62571ad551d5d, type: 3}
