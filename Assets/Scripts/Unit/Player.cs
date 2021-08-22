@@ -40,6 +40,7 @@ public class Player : Unit
         }
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
+
     public override void Move(int direction)
     {
         if (focus)

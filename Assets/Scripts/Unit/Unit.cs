@@ -18,7 +18,7 @@ abstract public class Unit:MonoBehaviour
     private Animator animator;
     public Transform weapon;
     public UnityEvent HitEvent;
-    
+    public bool alive = true;
     void Awake()
     {
         
@@ -35,11 +35,11 @@ abstract public class Unit:MonoBehaviour
     {
         Direction dir = (Direction)direction;
         animator.SetBool("move", true);
-        if (jumpable)
+        if (alive && jumpable)
         {
             SoundManager.Instance.PlayLoopSFX(SoundManager.ESFX_Loop._sfx_loop_move);
         }
-        if (dir == Direction.Left)
+        if (alive && dir == Direction.Left)
         {
             if (type==UnitType.Goblin)
             {
@@ -50,7 +50,7 @@ abstract public class Unit:MonoBehaviour
             else
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
-        else if(dir == Direction.Right)
+        else if(alive && dir == Direction.Right)
         {
             if (type == UnitType.Goblin)
             {
@@ -64,7 +64,7 @@ abstract public class Unit:MonoBehaviour
     }
     public virtual void Jump()
     {
-        if(jumpable)
+        if(jumpable && alive)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 1.0f, 0) * jumpforce, ForceMode2D.Impulse);
             SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_jump);
@@ -120,11 +120,12 @@ abstract public class Unit:MonoBehaviour
     {
         animator.SetBool("jump", false);
         animator.SetTrigger("die");
-        GetComponent<Rigidbody2D>().gravityScale = 0;
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        //GetComponent<Rigidbody2D>().gravityScale = 0;
+        //GetComponent<CapsuleCollider2D>().enabled = false;
         Instantiate(blood, transform.position+new Vector3(0,1f,0), Quaternion.identity);
         SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_blood);
         CantAttack();
+        alive = false;
     }
     public void Die()
     {
