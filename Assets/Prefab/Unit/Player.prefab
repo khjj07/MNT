@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpforce: 14
+  jumpforce: 13
   jumpable: 0
   weapontype: 1
   type: 0
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4308345228770693888}
   m_Bounds:
-    m_Center: {x: -0.13075566, y: 0.43038952, z: 0}
+    m_Center: {x: -0.13075662, y: 0.43038952, z: 0}
     m_Extent: {x: 0.5674349, y: 0.56932014, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4308345229543217214}
   m_Bounds:
-    m_Center: {x: -0.04889822, y: -6.0502896, z: 0}
+    m_Center: {x: -0.048899174, y: -6.0502896, z: 0}
     m_Extent: {x: 1.480001, y: 1.1350007, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1375,7 +1375,7 @@ MonoBehaviour:
   - {fileID: 4308345229077227706}
   - {fileID: 4308345227965095670}
   m_Bounds:
-    m_Center: {x: -0.043776512, y: -6.1126766, z: 0}
+    m_Center: {x: -0.043777466, y: -6.1126766, z: 0}
     m_Extent: {x: 0.23224509, y: 0.4493649, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

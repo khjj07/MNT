@@ -99,7 +99,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5812809867826307737}
   m_Bounds:
-    m_Center: {x: 0.3099506, y: -5.450796, z: 0}
+    m_Center: {x: 0.30994296, y: -5.450796, z: 0}
     m_Extent: {x: 2.2438483, y: 1.6512878, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5812809866577501274}
   m_Bounds:
-    m_Center: {x: 0.2604472, y: -4.4540234, z: 0}
+    m_Center: {x: 0.2604434, y: -4.4540234, z: 0}
     m_Extent: {x: 0.7849951, y: 0.96486497, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -396,7 +396,7 @@ MonoBehaviour:
   - {fileID: 5812809866522837592}
   - {fileID: 5812809866316766618}
   m_Bounds:
-    m_Center: {x: -3.7226338, y: -2.7633653, z: 0}
+    m_Center: {x: -3.7226377, y: -2.7633653, z: 0}
     m_Extent: {x: 0.6222143, y: 0.3030951, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 5812809866637377071}
   - component: {fileID: 5812809866637377058}
   m_Layer: 0
-  m_Name: Friend
+  m_Name: friend
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -590,12 +590,14 @@ MonoBehaviour:
   HitEvent:
     m_PersistentCalls:
       m_Calls: []
+  alive: 1
   focus: 0
   attackdelay: 2
   AttackEvent:
     m_PersistentCalls:
       m_Calls: []
   point: {fileID: 0}
+  Wifi: {fileID: 0}
 --- !u!1 &5812809866679768806
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +964,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5812809866421729010}
   m_Bounds:
-    m_Center: {x: -0.5284813, y: -2.8234773, z: 0}
+    m_Center: {x: -0.5284851, y: -2.8234782, z: 0}
     m_Extent: {x: 0.38955003, y: 0.51997995, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1095,7 +1097,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5812809867056446640}
   m_Bounds:
-    m_Center: {x: 3.1996684, y: -4.4214683, z: 0}
+    m_Center: {x: 3.1996684, y: -4.4214673, z: 0}
     m_Extent: {x: 0.4573574, y: 0.68896353, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
