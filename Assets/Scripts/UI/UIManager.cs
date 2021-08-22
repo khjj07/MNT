@@ -40,8 +40,9 @@ public class UIManager : Singleton<UIManager>
         }
         else
         {
-            UICharacter.instance.ImageChatBox.gameObject.SetActive(false);
-            TurnManager.GameStart();
+            UICharacter.instance.NextStartChat();
+            //UICharacter.instance.ImageChatBox.gameObject.SetActive(false);
+            //TurnManager.GameStart();
         }
 
     }
