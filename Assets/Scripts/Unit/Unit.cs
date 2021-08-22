@@ -19,6 +19,7 @@ abstract public class Unit:MonoBehaviour
     public Transform weapon;
     public UnityEvent HitEvent;
     public bool alive = true;
+    public UnityEvent DieEvent;
     void Awake()
     {
         
@@ -31,6 +32,7 @@ abstract public class Unit:MonoBehaviour
     {
         animator.SetBool("move", false);
     }
+
     public virtual void Move(int direction)
     {
         Direction dir = (Direction)direction;
@@ -143,7 +145,7 @@ abstract public class Unit:MonoBehaviour
         {
             TurnManager.instance.UnitDead(transform.GetComponent<Player>());
             Destroy(gameObject);
-            TurnManager.instance.UpdatePlayer();
+            DieEvent.Invoke();
         }
     }
 

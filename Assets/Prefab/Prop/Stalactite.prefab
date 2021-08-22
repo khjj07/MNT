@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 3254664854445178348}
   m_Layer: 0
   m_Name: Stalactite
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,11 +421,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908043650485614515, guid: 180b266a3e005c7438cae9b4becc0f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.125
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 1908043650485614515, guid: 180b266a3e005c7438cae9b4becc0f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.61
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 2782012427003431909, guid: 180b266a3e005c7438cae9b4becc0f8f, type: 3}
       propertyPath: m_LocalPosition.x
