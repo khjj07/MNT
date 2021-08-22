@@ -41,7 +41,7 @@ public class Player : Unit
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
 
-    public void DeadChange()
+    public override void DeadChange()
     {
         if(focus)
         {

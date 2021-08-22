@@ -145,8 +145,14 @@ abstract public class Unit:MonoBehaviour
         {
             TurnManager.instance.UnitDead(transform.GetComponent<Player>());
             Destroy(gameObject);
-            DieEvent.Invoke();
+            //DieEvent.Invoke();
+            DeadChange();
         }
+    }
+
+    public virtual void DeadChange()
+    {
+
     }
 
     public void OnTheGround(Collision2D collision)
