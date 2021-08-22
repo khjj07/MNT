@@ -96,6 +96,7 @@ MonoBehaviour:
   current_player: {fileID: 0}
   TurnLimit: 4
   RemainTurn: 0
+  result: 0
   DefeatEvent:
     m_PersistentCalls:
       m_Calls: []
