@@ -10,8 +10,8 @@ using DG.Tweening;
 public class UITurnIcon : MonoBehaviour
 {
     private CameraManager CameraManager;
-    private UIManager UIManager;
-    private UITurn UITurn;
+    public UIManager UIManager;
+    public UITurn UITurn;
     [SerializeField]
     private Player player;
 
@@ -25,7 +25,6 @@ public class UITurnIcon : MonoBehaviour
     void Start()
     {
         UITurn = GetComponentInParent<UITurn>();
-        UIManager = UIManager.instance;
         CameraManager = CameraManager.instance;
     }
 
@@ -43,17 +42,12 @@ public class UITurnIcon : MonoBehaviour
             return;
         }
 
+        Debug.Log(UIManager);
+
         this.player = player;
         ImagePortrait.sprite = UIManager.Sprites
-            .Find(x =>
-            {
-                if (x.name.Split('_')[0].Equals("Turn"))
-                {
-                    if (x.name.Split('_')[1].Equals(player.type.ToString()))
-                        return true;
-                }
-                return false;
-            });
+            .FindAll(x => x.name.Split('_')[0].Equals("Turn"))
+            .Find(x => x.name.Split('_')[1].Equals(player.type.ToString()));
 
     }
 

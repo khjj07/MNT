@@ -1584,8 +1584,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37.5, y: 0}
-  m_SizeDelta: {x: 675, y: 100}
+  m_AnchoredPosition: {x: 100, y: 0}
+  m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5949769656498126211
 MonoBehaviour:
@@ -1594,7 +1594,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2682043581412611839}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 60, y: 80}
+  m_CellSize: {x: 80, y: 80}
   m_Spacing: {x: 10, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -5884,6 +5884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurnIcon (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4867286176726190202, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 8252275007038752201}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5898,27 +5902,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5950,7 +5954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5986,6 +5990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurnIcon (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4867286176726190202, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 8252275007038752201}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6000,27 +6008,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6052,7 +6060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6088,6 +6096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurnIcon (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4867286176726190202, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 8252275007038752201}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6102,27 +6114,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6154,7 +6166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6190,6 +6202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurnIcon (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4867286176726190202, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 8252275007038752201}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6204,27 +6220,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6256,7 +6272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6292,6 +6308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurnIcon (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4867286176726190202, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 8252275007038752201}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6306,27 +6326,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6358,7 +6378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6394,6 +6414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurnIcon (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4867286176726190202, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 8252275007038752201}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6408,27 +6432,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6460,7 +6484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6496,6 +6520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurnIcon (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4867286176726190202, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 8252275007038752201}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6510,27 +6538,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6562,7 +6590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6598,6 +6626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurnIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 4867286176726190202, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
+      propertyPath: UIManager
+      value: 
+      objectReference: {fileID: 8252275007038752201}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6612,27 +6644,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6664,7 +6696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565250394069014072, guid: 66138e6c5b153b246b55ff2d9c58979a, type: 3}
       propertyPath: m_AnchoredPosition.y
