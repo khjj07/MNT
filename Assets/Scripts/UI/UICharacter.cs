@@ -92,6 +92,7 @@ public class UICharacter : Singleton<UICharacter>
     public void NextStartChat()
     {
         var chat = ChatManager.GetStartChat();
+        ImageChatBox.gameObject.SetActive(true);
 
         if (chat == null)
         {
@@ -111,6 +112,7 @@ public class UICharacter : Singleton<UICharacter>
     public void NextEndChat()
     {
         var chat = ChatManager.GetEndChat();
+        ImageChatBox.gameObject.SetActive(true);
 
         if (chat == null)
         {

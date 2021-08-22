@@ -34,8 +34,17 @@ public class UIManager : Singleton<UIManager>
             if (UICutScene)
                 UICutScene.StartCut();
             else
+            {
+                Debug.Log("UI Cut Scene is None. Start Chat Start");
                 UICharacter.instance.NextStartChat();
+            }
         }
+        else
+        {
+            UICharacter.instance.ImageChatBox.gameObject.SetActive(false);
+            TurnManager.GameStart();
+        }
+
     }
 
     void Victory()
