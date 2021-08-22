@@ -2501,7 +2501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startChats:
   - player: {fileID: 0}
-    chat: "\uC778\uAC04\uB188\uB4E4 \uAC07\uD600\uC788\uB354\uB2C8 \uBE44\uC2E4\uBE44\uC2E4\uD574\uC84C\uC5B4!
+    chat: "\uC784\uD504\uB188\uB4E4 \uAC07\uD600\uC788\uB354\uB2C8 \uBE44\uC2E4\uBE44\uC2E4\uD574\uC84C\uC5B4!
       \uACE0\uBE14\uACE0\uBE14"
   - player: {fileID: 0}
     chat: "\uC6B0\uB9AC\uB97C \uB3D9\uAD74\uB85C \uBAB0\uC544\uB0B8 \uB188\uB4E4,
