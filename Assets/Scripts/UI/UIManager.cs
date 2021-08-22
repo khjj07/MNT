@@ -47,6 +47,7 @@ public class UIManager : Singleton<UIManager>
 
     }
 
+    [ContextMenu("Victory")]
     void Victory()
     {
         Debug.Log("Victory Event");

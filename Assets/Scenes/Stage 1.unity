@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &67834009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8907384415021207703, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
+  m_PrefabInstance: {fileID: 2122469388}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f54ff40d0364db49a7f213d7327b3ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &97109768 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3879573985114955389, guid: 9add10039939f574bbb21c6f967894e4, type: 3}
@@ -2622,6 +2633,7 @@ PrefabInstance:
       propertyPath: startChats.Array.data[3].player
       value: 
       objectReference: {fileID: 1937167324}
+<<<<<<< HEAD
     - target: {fileID: 2418446431599339109, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2818,6 +2830,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+=======
+    - target: {fileID: 8252275007038752201, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
+      propertyPath: UICutScene
+      value: 
+      objectReference: {fileID: 67834009}
+>>>>>>> e0b01ea8d3af4dd75c7fcbeeb7ed60a792d1f17f
     - target: {fileID: 8253040400003739349, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
       propertyPath: m_Name
       value: Canvas_InGame

@@ -445,4 +445,4 @@ MonoBehaviour:
   sfx_trap: {fileID: 8300000, guid: 5ab435c778386c64d8e8988f9537479f, type: 3}
   sfx_text: {fileID: 8300000, guid: 2dc6879c7e1f89d469238275dc9ee952, type: 3}
   sfx_Loop_move: {fileID: 8300000, guid: 403fb411f9d2fa842b86123fcae822ea, type: 3}
-  sfx_Loop_heartBeat: {fileID: 8300000, guid: 6287c96e9a3e8c34c972f76248a0da63, type: 3}
+  sfx_Loop_heartBeat: {fileID: 8300000, guid: c3df08ffdd6d9894e99434d61eb5403c, type: 3}
