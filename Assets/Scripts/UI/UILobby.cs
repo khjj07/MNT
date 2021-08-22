@@ -8,6 +8,11 @@ public class UILobby : MonoBehaviour
 
     void Start()
     {
+        print("»£√‚");
+
+        SoundManager.Instance.StopBGM(SoundManager.EBGM._bgm_outro);
+        SoundManager.Instance.StopBGM(SoundManager.EBGM._bgm_ingame);
+        SoundManager.Instance.PlayBGM(SoundManager.EBGM._bgm_title);
         if (isReset)
         {
             isReset = false;

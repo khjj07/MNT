@@ -61,6 +61,8 @@ public class UIObjectControllerX : MonoBehaviour
         {
             x.SlideAndFadeIn();
         });
+        SoundManager.Instance.StopBGM(SoundManager.EBGM._bgm_ingame);
+        SoundManager.Instance.PlayBGM(SoundManager.EBGM._bgm_outro);
     }
 
 }

@@ -16,7 +16,10 @@ public class UICutScene : MonoBehaviour
 
     private void Awake()
     {
-        
+        if(isDirection&&isFirst)
+        {
+            SoundManager.Instance.PlayBGM(SoundManager.EBGM._bgm_intro);
+        }
     }
 
     public void StartCut()
@@ -47,6 +50,8 @@ public class UICutScene : MonoBehaviour
             if (isFirst)
             {
                 UICharacter.instance.NextStartChat();
+                SoundManager.Instance.StopBGM(SoundManager.EBGM._bgm_intro);
+                SoundManager.Instance.PlayBGM(SoundManager.EBGM._bgm_ingame);
             }
             else
             {

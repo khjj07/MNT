@@ -11,6 +11,16 @@ public class MNTSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneNum);
     }
+    public void StopBGM()
+    {
+        SoundManager.Instance.StopBGM(SoundManager.EBGM._bgm_title);
+        
+    }    
+
+    public void PlayBGM()
+    {
+        SoundManager.Instance.PlayBGM(SoundManager.EBGM._bgm_ingame);
+    }
 
     public void Restart()
     {
