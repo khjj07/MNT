@@ -62,6 +62,11 @@ abstract public class Unit:MonoBehaviour
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
     }
+    public IEnumerator JumpDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        jumpable = false;
+    }
     public virtual void Jump()
     {
         if(jumpable && alive)
@@ -69,7 +74,7 @@ abstract public class Unit:MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 1.0f, 0) * jumpforce, ForceMode2D.Impulse);
             SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_jump);
             animator.SetBool("jump", true);
-            jumpable = false;
+            StartCoroutine(JumpDelay());
         }
     }
     public void CantAttack()
@@ -145,7 +150,7 @@ abstract public class Unit:MonoBehaviour
     public void OnTheGround(Collision2D collision)
     {
         Vector3 normalVector = collision.contacts[0].normal;
-        if (normalVector.y>0.5 && jumpable == false)
+        if (normalVector.y>0.7 && jumpable == false)
         {
             jumpable = true;
             SoundManager.Instance.PlayOneShotSFX(SoundManager.ESFX._sfx_jumpLanding);
@@ -155,12 +160,8 @@ abstract public class Unit:MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Vector3 normalVector = collision.contacts[0].normal;
-        OnTheGround(collision);
-        if (normalVector.y > 0.5)
-        {
-            animator.SetBool("jump", false);
-        }
-        if(collision.gameObject.tag=="Unit" && type==UnitType.Player)
+        
+        if (collision.gameObject.tag=="Unit" && type==UnitType.Player)
         {
             UnitType type = collision.gameObject.GetComponent<Player>().type;
             if(type==UnitType.Goblin || type == UnitType.GoblinArcher || type == UnitType.IronGoblin)
@@ -169,5 +170,13 @@ abstract public class Unit:MonoBehaviour
             }
 
         }
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!jumpable)
+        {
+            animator.SetBool("jump", false);
+        }
+        OnTheGround(collision); 
     }
 }
