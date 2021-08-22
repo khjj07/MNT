@@ -11,6 +11,7 @@ public class TurnManager : Singleton<TurnManager>
     public int TurnLimit = 4;
     private int flag = 0;
     public int RemainTurn;
+    public bool result=false;
     public UnityEvent DefeatEvent;
     public UnityEvent EnemyAllDeadEvent;
     public UnityEvent VictoryEvent;
@@ -24,8 +25,13 @@ public class TurnManager : Singleton<TurnManager>
     }
     public void Defeat()
     {
-        Debug.Log("defeat");
-        DefeatEvent.Invoke();
+        if(result == false)
+        {
+            Debug.Log("defeat");
+            current_player.FocusOff();
+            DefeatEvent.Invoke();
+            result = true;
+        }
     }
 
     public void FixPlayerList(int i)
@@ -92,9 +98,9 @@ public class TurnManager : Singleton<TurnManager>
         {
             flag = 0;
         }
-        RemainTurn--;
         if (current_player == null || player_list[flag] != current_player)
         {
+            RemainTurn--;
             GameStateManager.instance.Change(player_list[flag].GetComponent<GameState>());
             current_player = player_list[flag].GetComponent<Player>();
             TurnChangeEvent.Invoke();
@@ -117,7 +123,12 @@ public class TurnManager : Singleton<TurnManager>
     }
     public void Victory()
     {
-        Debug.Log("Victory");
-        VictoryEvent.Invoke();
+        if (result == false)
+        {
+            Debug.Log("Victory");
+            current_player.FocusOff();
+            VictoryEvent.Invoke();
+            result = true;
+        }
     }
 }
