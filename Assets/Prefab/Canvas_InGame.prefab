@@ -2560,14 +2560,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startChats:
   - player: {fileID: 0}
-    chat: "\uBC30\uACE0\uD30C.. \uB098 \uC598 \uBA39\uC5B4\uB3C4 \uB420\uAE4C?"
+    chat: "\uC778\uAC04\uB188\uB4E4 \uAC07\uD600\uC788\uB354\uB2C8 \uBE44\uC2E4\uBE44\uC2E4\uD574\uC84C\uC5B4!
+      \uACE0\uBE14\uACE0\uBE14"
   - player: {fileID: 0}
-    chat: "\uC548\uB3FC! \uC774 \uBA4D\uCCAD\uD55C \uC790\uC2DD..."
+    chat: "\uC6B0\uB9AC\uB97C \uB3D9\uAD74\uB85C \uBAB0\uC544\uB0B8 \uB188\uB4E4,
+      \uB611\uAC19\uC774 \uB2F9\uD574\uC57C\uD574! \uACE0\uBE14\uACE0\uBE14"
   - player: {fileID: 0}
-    chat: "!! \uBE68\uB9AC \uAD6C\uD558\uB7EC \uAC00\uC57C\uACA0\uC5B4"
+    chat: "\uC5B8\uC81C\uAE4C\uC9C0 \uC774\uB7EC\uACE0 \uC788\uC5B4\uC57C\uD560\uAE4C..."
+  - player: {fileID: 0}
+    chat: "\uACE0\uBE14\uB9B0\uB4E4\uC744 \uCC98\uCE58\uD558\uACE0 \uB3D9\uB8CC\uB97C
+      \uAD6C\uD574\uC918\uC57C\uACA0\uC5B4!"
   endChats:
   - player: {fileID: 0}
-    chat: "\uD798\uB4E0 \uC5EC\uC815\uC774\uC600\uC5B4..."
+    chat: "\uC5B4\uB5BB\uAC8C \uACE0\uBE14\uB9B0\uB4E4\uC744 \uC870\uC885\uD558\uC2E0\uAC70\uC8E0?!"
+  - player: {fileID: 0}
+    chat: "\uBC15\uC950\uC5D0\uAC8C \uBB3C\uB9AC\uACE0 \uC815\uC2E0\uC774 \uC5F0\uACB0\uB418\uB294
+      \uB2A5\uB825\uC774 \uC0DD\uACBC\uC5B4. \uBB3C\uB860 \uD1B5\uC81C\uB294 \uC5B4\uB835\uC9C0\uB9CC..."
+  - player: {fileID: 0}
+    chat: "\uAC10\uC0AC\uD569\uB2C8\uB2E4. \uB0A8\uC740 \uB3D9\uB8CC\uB4E4\uC774
+      \uC548\uC5D0 \uB354 \uC788\uC5B4\uC694!"
 --- !u!1 &4765661469843268448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,6 +4918,7 @@ GameObject:
   - component: {fileID: 8253040400003739351}
   - component: {fileID: 8253040400003739347}
   - component: {fileID: 8252275007038752201}
+  - component: {fileID: 6180491101736259557}
   m_Layer: 0
   m_Name: Canvas_InGame
   m_TagString: Untagged
@@ -5041,7 +5053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnManager: {fileID: 0}
-  UICutScene: {fileID: 8907384415021207703}
+  UICutScene: {fileID: 0}
   UICharacter: {fileID: 9184704420983759552}
   UIDefeat: {fileID: 3679688935107832609}
   Sprites:
@@ -5055,6 +5067,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 41104f2c7a1880e49b1079c79e700f74, type: 3}
   - {fileID: 21300000, guid: accc3d16a53f2294ca4d0731cbdd4014, type: 3}
   - {fileID: 21300000, guid: 8bed9598309f1ad41a55ca10b853f1a4, type: 3}
+--- !u!114 &6180491101736259557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253040400003739349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ae380d6bfdcf94e8279b5de2974b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorimg: {fileID: 2800000, guid: 4b468036367e1704cb3f1833431e79e3, type: 3}
 --- !u!1 &8253040400069826640
 GameObject:
   m_ObjectHideFlags: 0

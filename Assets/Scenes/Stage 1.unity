@@ -523,7 +523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5812809866637377059, guid: 1edfa3859593a8147815769a16cd0a56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.9048157
+      value: -7.63
       objectReference: {fileID: 0}
     - target: {fileID: 5812809866637377059, guid: 1edfa3859593a8147815769a16cd0a56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2603,28 +2603,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: endChats.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: startChats.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: endChats.Array.data[0].chat
-      value: "\uC5B4\uB5BB\uAC8C \uACE0\uBE14\uB9B0\uB4E4\uC744 \uC870\uC885\uD558\uC2E0\uAC70\uC8E0?!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: endChats.Array.data[1].chat
-      value: "\uBC15\uC950\uC5D0\uAC8C \uBB3C\uB9AC\uACE0 \uC815\uC2E0\uC774 \uC5F0\uACB0\uB418\uB294
-        \uB2A5\uB825\uC774 \uC0DD\uACBC\uC5B4. \uBB3C\uB860 \uD1B5\uC81C\uB294 \uC5B4\uB835\uC9C0\uB9CC..."
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: endChats.Array.data[2].chat
-      value: "\uAC10\uC0AC\uD569\uB2C8\uB2E4. \uB0A8\uC740 \uB3D9\uB8CC\uB4E4\uC774
-        \uC548\uC5D0 \uB354 \uC788\uC5B4\uC694!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
       propertyPath: endChats.Array.data[0].player
       value: 
       objectReference: {fileID: 1576740187}
@@ -2636,29 +2614,6 @@ PrefabInstance:
       propertyPath: endChats.Array.data[2].player
       value: 
       objectReference: {fileID: 1576740187}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: startChats.Array.data[0].chat
-      value: "\uC778\uAC04\uB188\uB4E4 \uAC07\uD600\uC788\uB354\uB2C8 \uBE44\uC2E4\uBE44\uC2E4\uD574\uC84C\uC5B4!
-        \uACE0\uBE14\uACE0\uBE14"
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: startChats.Array.data[1].chat
-      value: "\uC6B0\uB9AC\uB97C \uB3D9\uAD74\uB85C \uBAB0\uC544\uB0B8 \uB188\uB4E4,
-        \uB611\uAC19\uC774 \uB2F9\uD574\uC57C\uD574! \uACE0\uBE14\uACE0\uBE14"
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: startChats.Array.data[2].chat
-      value: "\uC5B8\uC81C\uAE4C\uC9C0 \uC774\uB7EC\uACE0 \uC788\uC5B4\uC57C\uD560\uAE4C..."
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: startChats.Array.data[3].chat
-      value: "\uACE0\uBE14\uB9B0\uB4E4\uC744 \uCC98\uCE58\uD558\uACE0 \uB3D9\uB8CC\uB97C
-        \uAD6C\uD574\uC918\uC57C\uACA0\uC5B4!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: startChats.Array.data[4].chat
-      value: "\uBB50\uC9C0? \uC800 \uD5EC\uBA67 \uC4F4 \uB140\uC11D\uC740..."
-      objectReference: {fileID: 0}
     - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
       propertyPath: startChats.Array.data[0].player
       value: 
@@ -2675,34 +2630,6 @@ PrefabInstance:
       propertyPath: startChats.Array.data[3].player
       value: 
       objectReference: {fileID: 1937167324}
-    - target: {fileID: 194685782354063648, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: startChats.Array.data[4].player
-      value: 
-      objectReference: {fileID: 1937167324}
-    - target: {fileID: 905037319886337404, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403359654522582863, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2438007193062231903, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7487735525946417782, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8252275007038752201, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: UICutScene
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253040398968478452, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8253040400003739349, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
       propertyPath: m_Name
       value: Canvas_InGame
@@ -2790,10 +2717,6 @@ PrefabInstance:
     - target: {fileID: 8253040400003739350, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253040400103033200, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
-      propertyPath: m_text
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba9f01a4bd1e06b40a1c791e3aa39ae2, type: 3}
