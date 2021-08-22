@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpforce: 10
+  jumpforce: 14
   jumpable: 0
   weapontype: 1
   type: 0
@@ -594,6 +594,7 @@ MonoBehaviour:
   HitEvent:
     m_PersistentCalls:
       m_Calls: []
+  alive: 1
   focus: 0
   attackdelay: 2
   AttackEvent:
